@@ -1,5 +1,5 @@
 TitanTraid::Application.routes.draw do
- # resources :pages
+  resources :pages
   root :to => 'pages#about'
 
   match '/about', :to => 'pages#about'
