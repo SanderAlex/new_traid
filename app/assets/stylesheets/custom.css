@@ -1,0 +1,55 @@
+.container {
+  width: 980px;
+}
+
+nav  {
+	height: 130px;
+	background-color: RGB(130, 178, 232);
+	white-space: nowrap;
+}
+
+nav ul {
+  padding-left: 360px;
+}
+
+nav ul li {
+  list-style-type: none;
+  display: inline-block;
+  padding: 100px 2px;
+}
+
+a {
+  color: white;
+}
+
+a:hover {
+  color: RGB(255, 204, 66);
+  text-decoration: underline;
+}
+
+.left-block  {
+	float: left;
+	margin-top: -95px;
+	margin-left: 15px;
+	height: 300px;
+	width: 190px;
+	background-color: RGB(130, 178, 232);
+	text-align: center;
+}
+
+.orange  {
+	margin-left: 180px;
+	margin-top: -30px;
+	height: 135px;
+	width: 170px;
+	background-color: RGB(255, 204, 66);
+}
+
+.name  {
+	margin-left: 370px;
+	margin-top: -90px;
+}
+
+h1 {
+	color: RGB(255, 204, 66);
+}

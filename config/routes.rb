@@ -1,16 +1,16 @@
 TitanTraid::Application.routes.draw do
-  resources :pages
+ # resources :pages
   root :to => 'pages#about'
 
-  get "pages/about"
+  match '/about', :to => 'pages#about'
 
-  get "pages/sert"
+  match '/sert', :to => 'pages#sert'
 
-  get "pages/payment"
+  match '/payment', :to =>'pages#payment'
 
-  get "pages/contact"
+  match '/contact', :to =>'pages#contact'
 
-  get "pages/map"
+  match '/map', :to =>'pages#map'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
