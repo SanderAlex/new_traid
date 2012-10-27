@@ -1,16 +1,15 @@
 TitanTraid::Application.routes.draw do
-  # resources :pages
+  resources :pages
+  resources :products
   root :to => 'pages#about'
 
   match '/about', :to => 'pages#about'
-
   match '/sert', :to => 'pages#sert'
+  match '/payment', :to => 'pages#payment'
+  match '/contact', :to => 'pages#contact'
+  match '/map', :to => 'pages#map'
 
-  match '/payment', :to =>'pages#payment'
-
-  match '/contact', :to =>'pages#contact'
-
-  match '/map', :to =>'pages#map'
+  match "/products/:id" => "products#show"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

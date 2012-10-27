@@ -1,0 +1,25 @@
+<header>
+    <script>
+      $(function(){
+        $("a").mouseover(function(){
+          $(this).animate({
+            borderWidth: "5px"}, 250 );
+          });
+        $("a").mouseout(function(){
+          $(this).animate({
+            borderWidth: "0"}, 300 );
+        });
+      });
+    </script>
+    <%= image_tag("logo.png", :alt => "Титан-трейд") %>
+      <div class="im"></div>
+      <nav>
+        <ul>
+          <li><%= link_to "О компании", root_path %></li>
+          <li><%= link_to "Сертификаты", sert_path %></li>
+          <li><%= link_to "Доставка и оплата", payment_path %></li>
+          <li><%= link_to "Контакты", contact_path %></li>
+          <li><%= link_to "Карта сайта", map_path %></li>
+        </ul>
+      </nav>
+    </header>

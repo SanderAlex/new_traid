@@ -2,37 +2,23 @@
 <html>
 <head>
   <title>Титан-трейд | <%= @title %></title>
-  <%= csrf_meta_tags %>
-  <!--[if lt IE 9]>
-    <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
-  <%= stylesheet_link_tag 'blueprint/screen', :media => 'screen' %>
-    <%= stylesheet_link_tag 'blueprint/print',  :media => 'print' %>
-    <!--[if lt IE 8]><%= stylesheet_link_tag 'blueprint/ie' %><![endif]-->
-    <%= stylesheet_link_tag 'custom', :media => 'screen' %>
+  <%= render 'layouts/stylesheets' %>
+  <%= jquery %>
 </head>
 <body>
   <div class="container">
-    <header>
-      <%= image_tag("logo.png", :alt => "Титан-трейд") %>
-      <nav>
-        <ul>
-          <li><%= link_to "О компании", root_path %></li>
-          <li><%= link_to "Сертификаты", sert_path %></li>
-          <li><%= link_to "Доставка и оплата", payment_path %></li>
-          <li><%= link_to "Контакты", contact_path %></li>
-          <li><%= link_to "Карта сайта", map_path %></li>
-        </ul>
-      </nav>
-    </header>
-        	<div class="orange">
-     		</div>
-    	<section class="left-block">
-    	</section>
-    		<div class="name">	
-  				<%= yield %>
-  			</div>
-  </div>
+    <%= render 'layouts/header' %>
 
+    <div class="orange">
+    </div>
+
+    <section class="left-block">
+      <%= render 'layouts/left' %>
+    </section>
+
+    <div class="name">	
+  		<%= yield %>
+  	</div>
+  </div>
 </body>
 </html>
