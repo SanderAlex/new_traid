@@ -1,11 +1,11 @@
 module ProductsHelper
 
 	def list
-		@products = Product.find_all_by_section_and_subsection("1","1")
+		@products = Product.find_all_by_section_and_subsection("1","a")
 	end
 
 	def list1
-		@products = Product.find_all_by_section_and_subsection("1","2")
+		@products = Product.find_all_by_section_and_subsection("1","b")
 	end
 
 	def list2

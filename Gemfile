@@ -10,6 +10,7 @@ gem 'rails', '3.2.1'
 
 gem 'sqlite3', :group => [:development, :test]
 group :production do
+  gem 'unicorn', '~> 3.6.2', :require => nil
   gem 'thin'
   gem 'pg'
 end
@@ -36,6 +37,7 @@ gem 'yaml_db', :git => 'git://github.com/ludicast/yaml_db.git'
 
 gem "mysql2"
 
+gem 'capistrano'
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'

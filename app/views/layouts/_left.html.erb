@@ -1,6 +1,7 @@
   	<script>
-  		$(function(){
-          $(".n").hide();
+  		$(function() {
+
+        $(".n").hide();
 
        		$("nav ul li.list").mouseover(function(){
          		$(this).css({ color: "RGB(255, 204, 66)", cursor:"pointer" });
@@ -27,6 +28,7 @@
             $(this).next("section").slideToggle("slow")
             .siblings("section:visible").slideUp("slow");
         	});
+
           $("p").click(function(){
             $(this).next("section").slideToggle("slow")
             .siblings("section:visible").slideUp("slow");
@@ -37,45 +39,45 @@
 <nav class="list1">
 	<ul class="list">
 		<li class="list">Электрокотельные</li>
-						<section class="hide">
-              <p>Встраиваемые<br>отопительные модули</p>
-                <section class="n">
+						<section class="n" id="1">
+                <p>Встраиваемые<br>отопительные модули</p>
+                  <section class="n" id="a">
                   <% list %>
                   <% @products.each do |product| %>
                   <h5><%= link_to product.name, product %></h5>
                   <% end %>
-                </section>
-              <p>Модули в блок-контейнере</p>
-                <section class="n">
+              </section>
+              <p class="n1" id="a">Модули в блок-контейнере</p>
+              <section class="n" id="b">
                   <% list1 %>
                   <% @products.each do |product| %>
                   <h5><%= link_to product.name, product %></h5>
                   <% end %>
-                </section>
 						</section>
+          </section>
 		<li class="list">Пульты управления<br>электрокотельными</li>
-      <section class="n">
+      <section class="n" id="2">
         <% list2 %>
         <% @products.each do |product| %>
         <h5><%= link_to product.name, product %></h5>
         <% end %>
       </section>     
 		<li class="list">Электроводонагреватели</li>
-      <section class="n">
+      <section class="n" id="3">
         <% list3 %>
         <% @products.each do |product| %>
         <h5><%= link_to product.name, product %></h5>
         <% end %>
       </section> 
 		<li class="list">Пульты управления<br>электроводонагревателями</li>
-      <section class="n">
+      <section class="n" id="4">
         <% list4 %>
         <% @products.each do |product| %>
         <h5><%= link_to product.name, product %></h5>
         <% end %>
       </section> 
 		<li class="list">Прочая продукция</li>
-      <section class="n">
+      <section class="n" id="5">
         <% list5 %>
         <% @products.each do |product| %>
         <h5><%= link_to product.name, product %></h5>
