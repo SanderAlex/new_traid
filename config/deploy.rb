@@ -38,6 +38,7 @@ load 'deploy/assets'
 # Если вы не используете авторизацию SSH по ключам И ssh-agent,
 # закомментируйте эту опцию.
 ssh_options[:forward_agent] = true
+  default_run_options[:pty] = true
 
 # Имя вашего проекта в панели управления.
 # Не меняйте это значение без необходимости, оно используется дальше.
@@ -92,8 +93,6 @@ end
   set :unicorn_start_cmd, "(cd #{deploy_to}/current; rvm use #{rvm_ruby_string} do bundle exec unicorn_rails -Dc #{unicorn_conf})"
 
   
-  default_run_options[:pty] = true
-
 
 # - for unicorn - #
 namespace :deploy do
