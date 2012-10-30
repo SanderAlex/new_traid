@@ -77,7 +77,9 @@ set :scm,             :git
 # домашнем каталоге в подкаталоге git/<имя проекта>.git.
 # Подробнее о создании репозитория читайте в нашем блоге
 # http://locum.ru/blog/hosting/git-on-locum
-set :repository,      "git@github.com:SanderAlex/titan-traid.git"
+set :repository,      "ssh://#{user}@#{deploy_server}/home/#{user}/git/#{application}.git"
+
+# git@github.com:SanderAlex/titan-traid.git
 
 ## Если ваш репозиторий в GitHub, используйте такую конфигурацию
 # set :repository,    "git@github.com:username/project.git"
