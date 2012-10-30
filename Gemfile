@@ -44,7 +44,7 @@ gem "mysql2"
 
 gem 'capistrano'
 
-gem 'eventmachine'
+gem 'eventmachine' :require => 'eventmachine'
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
