@@ -8,11 +8,16 @@ gem 'rails', '3.2.1'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
-gem 'sqlite3', :group => [:development, :test]
+ gem 'sqlite3', :group => [:development, :test]
 group :production do
   gem 'unicorn', '~> 3.6.2', :require => nil
   gem 'thin'
   gem 'pg'
+end
+
+group :development do
+  gem 'mongrel'
+  gem 'ruby-debug'
 end
 
 # gem 'yaml_db', :git => 'git://github.com/ludicast/yaml_db.git'
@@ -38,6 +43,8 @@ gem 'yaml_db', :git => 'git://github.com/ludicast/yaml_db.git'
 gem "mysql2"
 
 gem 'capistrano'
+
+gem 'eventmachine'
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
