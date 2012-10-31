@@ -45,7 +45,7 @@ gem 'capistrano'
 
 gem 'activerecord-mysql2-adapter'
 
-gem 'eventmachine'
+# gem 'eventmachine'
 
 gem 'rack-openid', '>=0.2.1', :require => 'rack/openid'
 
