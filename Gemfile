@@ -10,7 +10,7 @@ gem 'rails', '3.2.1'
 
  gem 'sqlite3', :group => [:development, :test]
 group :production do
-  gem 'unicorn', '~> 3.6.2'
+  gem 'unicorn', '~> 3.6.2', :require => nil
   gem 'thin'
   gem 'pg'
 end
@@ -24,7 +24,6 @@ end
 
 gem 'json'
 
-# Gems used only for assets and not required
 # in production environments by default.
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
@@ -44,7 +43,15 @@ gem "mysql2"
 
 gem 'capistrano'
 
+gem 'activerecord-mysql2-adapter'
+
 gem 'eventmachine'
+
+gem 'rack-openid', '>=0.2.1', :require => 'rack/openid'
+
+gem 'fastercsv'
+
+gem 'net-ldap'
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
