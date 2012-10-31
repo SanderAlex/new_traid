@@ -10,7 +10,7 @@ gem 'rails', '3.2.1'
 
  gem 'sqlite3', :group => [:development, :test]
 group :production do
-  gem 'unicorn', '~> 3.6.2', :require => nil
+  gem 'unicorn', '~> 3.6.2'
   gem 'thin'
   gem 'pg'
 end
