@@ -59,5 +59,8 @@ module TitanTraid
     config.action_view.javascript_expansions[:defaults] = %w(jquery rails)
 
     config.assets.initialize_on_precompile = false
+
+    config.assets.precompile += ['custom.css, ie.cssm, print.css, screen.css, html5.js']
+
   end
 end
