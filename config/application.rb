@@ -57,5 +57,7 @@ module TitanTraid
     config.assets.version = '1.0'
 
     config.action_view.javascript_expansions[:defaults] = %w(jquery rails)
+
+    config.assets.initialize_on_precompile = false
   end
 end
