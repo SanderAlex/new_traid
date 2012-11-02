@@ -43,7 +43,7 @@ gem "mysql2"
 
 gem 'capistrano'
 
-gem 'activerecord-mysql2-adapter'
+# gem 'activerecord-mysql2-adapter'
 
 gem 'eventmachine'
 
