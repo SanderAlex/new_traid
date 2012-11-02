@@ -60,7 +60,7 @@ module TitanTraid
 
     config.assets.initialize_on_precompile = false
 
-    config.assets.precompile += ['custom.css, ie.cssm, print.css, screen.css, html5.js']
+    config.assets.precompile += %w/ *.js *.css /
 
   end
 end
