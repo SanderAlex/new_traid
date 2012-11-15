@@ -1,25 +1,107 @@
 <header>
     <script>
       $(function(){
-        $("a").mouseover(function(){
+        $(".ss").children("a").mouseover(function(){
           $(this).animate({
             borderWidth: "5px"}, 250 );
+          $(this).dequeue('fx');
           });
-        $("a").mouseout(function(){
+        $(".ss").children("a").mouseout(function(){
           $(this).animate({
             borderWidth: "0"}, 300 );
+        $(this).dequeue('fx');
         });
+
+        $("#about").mouseover(function(){
+          $(".picture#ind").animate({opacity:0}, 600);
+          $(".picture#about").animate({opacity:1.0}, 600);
+          $(".picture").dequeue('fx');
+        });
+
+
+        $("#about").mouseout(function(){
+          $(".picture#ind").animate({opacity:1.0}, 590);
+          $(".picture#about").animate({opacity:0}, 590);
+          $(".picture").dequeue('fx');
+        });
+
+        $("#sert").mouseover(function(){
+          $(".picture#ind").animate({opacity:0}, 600);
+          $(".picture#sert").animate({opacity:1.0}, 600);
+          $(".picture").dequeue('fx');
+        });
+
+
+        $("#sert").mouseout(function(){
+          $(".picture#ind").animate({opacity:1.0}, 590);
+          $(".picture#sert").animate({opacity:0}, 590);
+          $(".picture").dequeue('fx');
+        });
+
+
+        $("#pay").mouseover(function(){
+          $(".picture#ind").animate({opacity:0}, 600);
+          $(".picture#pay").animate({opacity:1.0}, 600);
+          $(".picture").dequeue('fx');
+        });
+
+
+        $("#pay").mouseout(function(){
+          $(".picture#ind").animate({opacity:1.0}, 590);
+          $(".picture#pay").animate({opacity:0}, 590);
+          $(".picture").dequeue('fx');
+        });
+
+
+        $("#cont").mouseover(function(){
+          $(".picture#ind").animate({opacity:0}, 600);
+          $(".picture#cont").animate({opacity:1.0}, 600);
+          $(".picture").dequeue('fx');
+        });
+
+
+        $("#cont").mouseout(function(){
+          $(".picture#ind").animate({opacity:1.0}, 590);
+          $(".picture#cont").animate({opacity:0}, 590);
+          $(".picture").dequeue('fx');
+        });
+
+
+        $("#map").mouseover(function(){
+          $(".picture#ind").animate({opacity:0}, 600);
+          $(".picture#map").animate({opacity:1.0}, 600);
+          $(".picture").dequeue('fx');
+        });
+
+
+        $("#map").mouseout(function(){
+          $(".picture#ind").animate({opacity:1.0}, 590);
+          $(".picture#map").animate({opacity:0}, 590);
+          $(".picture").dequeue('fx');
+        });
+
       });
     </script>
     <%= image_tag("logo.png", :alt => "Титан-трейд") %>
       <div class="im"></div>
-      <nav>
+      <nav class="menu">
         <ul>
-          <li><%= link_to "О компании", root_path %></li>
-          <li><%= link_to "Сертификаты", sert_path %></li>
-          <li><%= link_to "Доставка и оплата", payment_path %></li>
-          <li><%= link_to "Контакты", contact_path %></li>
-          <li><%= link_to "Карта сайта", map_path %></li>
+          <li class="ss" id="about"><%= link_to "О компании", root_path %></li>
+          <li class="ss" id="sert"><%= link_to "Сертификаты", sert_path %></li>
+          <li class="ss" id="pay"><%= link_to "Доставка и оплата", payment_path %></li>
+          <li class="ss" id="cont"><%= link_to "Контакты", contact_path %></li>
+          <li class="ss" id="map"><%= link_to "Карта сайта", map_path %></li>
         </ul>
       </nav>
+
+<div class="search">
+<div class="srch"></div>
+<%= form_tag search_path, :method => 'get' do %>
+  <p class="s">Поиск</p>
+    <%= text_field_tag :search, params[:search], :id => 'search_field'  %>
+<% end %>
+</div>
+
     </header>
+
+

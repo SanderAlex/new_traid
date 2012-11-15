@@ -1,19 +1,13 @@
   	<script>
   		$(function() {
 
-        $(".n").hide();
+          $(".n:not(#<%= @product.section %>)").hide();
+          $(".n#<%= @product.subsection %>").slideToggle();
 
-       		$("nav ul li.list").mouseover(function(){
-         		$(this).css({ color: "RGB(255, 204, 66)", cursor:"pointer" });
-        	});
-        	$("nav ul li.list").mouseout(function(){
-          		$(this).css({ color: "white" });
-        	});
-
-          $("p").mouseover(function(){
+          $("h5").mouseover(function(){
             $(this).css({ color: "RGB(255, 204, 66)", cursor:"pointer" });
           });
-          $("p").mouseout(function(){
+          $("h5").mouseout(function(){
               $(this).css({ color: "white" });
           });
 
@@ -24,13 +18,56 @@
               $(this).css({ color: "white" });
           });
 
-        	$("nav ul li.list").click(function(){
-            $(this).next("section").slideToggle("slow")
-            .siblings("section:visible").slideUp("slow");
-        	});
+        	$("nav ul li.list").children("a").click(function(){
 
-          $("p").click(function(){
-            $(this).next("section").slideToggle("slow")
+            $(this).parent(".list").next("section").slideToggle("slow")
+            .siblings("section:visible").slideUp("slow");
+
+        	});
+          
+          
+          $(".list#1").children("a").click(function() {
+            $('h1').replaceWith("<% refresh0 %><h1><%= @title %></h1>");
+            $('.tovar').empty();
+           });
+
+
+
+                  $("h5#a").children("a").click(function() {
+                  $('h1').replaceWith("<% refresh %><h1><%= @title %></h1>");
+                  $('.tovar').empty();
+                  });
+
+
+                  $("h5#b").children("a").click(function() {
+                  $('h1').replaceWith("<% refresh1 %><h1><%= @title %></h1>");
+                  $('.tovar').empty();
+                  });
+
+
+
+          $(".list#2").children("a").click(function() {
+          $('h1').replaceWith("<% refresh2 %><h1><%= @title %></h1>");
+          $('.tovar').empty();
+          });
+
+          $(".list#3").children("a").click(function() {
+          $('h1').replaceWith("<% refresh3 %><h1><%= @title %></h1>");
+          $('.tovar').empty();
+           });
+
+          $(".list#4").children("a").click(function() {
+          $('h1').replaceWith("<% refresh4 %><h1><%= @title %></h1>");
+          $('.tovar').empty();
+           });
+
+          $(".list#5").children("a").click(function() {
+          $('h1').replaceWith("<% refresh5 %><h1><%= @title %></h1>");
+          $('.tovar').empty();
+           });
+
+          $("h5").children("a").click(function(){
+            $(this).parent("h5").next("section").slideToggle("slow")
             .siblings("section:visible").slideUp("slow");
           });
         });
@@ -38,49 +75,56 @@
 
 <nav class="list1">
   <ul class="list">
-    <li class="list">Электрокотельные</li>
+    <li class="list" id="1"><%= link_to "Электрокотельные", ajax_refpt0_path, :remote => true %></li>
+
             <section class="n" id="1">
-                <p>Встраиваемые<br>отопительные модули</p>
+                <h5 id="a"><%= link_to "Встраиваемые<br />отопительные модули".html_safe, ajax_refpt_path, :remote => true %></h5>
                   <section class="n" id="a">
                   <% list %>
                   <% @products.each do |product| %>
-                  <h5><%= link_to product.name, product %></h5>
+                  <h5><%= link_to product.name, product, :target => "_blank" %></h5>
                   <% end %>
               </section>
-              <p class="n1" id="a">Модули в блок-контейнере</p>
+
+              <h5 id="b"><%= link_to "Модули в блок-контейнере", ajax_refpt1_path, :remote => true %></h5>
               <section class="n" id="b">
                   <% list1 %>
                   <% @products.each do |product| %>
-                  <h5><%= link_to product.name, product %></h5>
+                  <h5><%= link_to product.name, product, :target => "_blank" %></h5>
                   <% end %>
             </section>
+
           </section>
-    <li class="list">Пульты управления<br>электрокотельными</li>
+
+    <li class="list" id="2"><%= link_to "Пульты управления<br />электрокотельными".html_safe, ajax_refpt2_path, :remote => true %></li>
       <section class="n" id="2">
         <% list2 %>
         <% @products.each do |product| %>
-        <h5><%= link_to product.name, product %></h5>
+        <h5><%= link_to product.name, product, :target => "_blank" %></h5>
         <% end %>
-      </section>     
-    <li class="list">Электроводонагреватели</li>
+      </section> 
+
+    <li class="list" id="3"><%= link_to "Электроводонагреватели", ajax_refpt3_path, :remote => true %></li>
       <section class="n" id="3">
         <% list3 %>
         <% @products.each do |product| %>
-        <h5><%= link_to product.name, product %></h5>
+        <h5><%= link_to product.name, product, :target => "_blank" %></h5>
         <% end %>
-      </section> 
-    <li class="list">Пульты управления<br>электроводонагревателями</li>
+      </section>
+
+    <li class="list" id="4"><%= link_to "Пульты управления<br />электроводонагревателями".html_safe, ajax_refpt4_path, :remote => true %></li>
       <section class="n" id="4">
         <% list4 %>
         <% @products.each do |product| %>
-        <h5><%= link_to product.name, product %></h5>
+        <h5><%= link_to product.name, product, :target => "_blank" %></h5>
         <% end %>
-      </section> 
-    <li class="list">Прочая продукция</li>
+      </section>
+       
+    <li class="list" id="5"><%= link_to "Прочая продукция", ajax_refpt5_path, :remote => true %></li>
       <section class="n" id="5">
         <% list5 %>
         <% @products.each do |product| %>
-        <h5><%= link_to product.name, product %></h5>
+        <h5><%= link_to product.name, product, :target => "_blank" %></h5>
         <% end %>
       </section> 
 </ul>

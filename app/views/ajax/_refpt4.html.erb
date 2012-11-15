@@ -1,0 +1,18 @@
+<%= render 'ajax/script' %>
+<div class="limit">
+	<table>
+		<% refresh4 %>
+		<% @products.in_groups_of(3, false) do |product_group| %>
+	<tr>
+        <% product_group.each do |product| %>
+        <td class="block">
+            <%= link_to product, :target => "_blank" do %>
+            <%= image_tag("#{product.id}.jpg", :size => "192x192", :alt => "#{product.name}.jpg") %>
+            <% end %><br>
+            <%= product.name %>
+        </td>
+        <% end %>
+    </tr>
+        <% end %>
+ 	</table>
+</div>

@@ -1,21 +1,46 @@
 class PagesController < ApplicationController
   def about
-    @title = "About"
+    @title = "О компании"
+    @product = Product.find_by_id("0")
   end
 
   def sert
-    @title = "Certificates"
+    @title = "Сертификаты"
+    @product = Product.find_by_id("0")
   end
 
   def payment
-    @title = "Delivery and Payment"
+    @title = "Доставка и оплата"
+    @product = Product.find_by_id("0")
   end
 
   def contact
-    @title = "Contacts"
+    @title = "Контакты"
+    @product = Product.find_by_id("0")
   end
 
   def map
-    @title = "Sitemap"
+    @title = "Карта сайта"
+    @product = Product.find_by_id("0")
+  end
+
+  def lic
+    @title = "Лицензия"
+    @product = Product.find_by_id("0")
+  end
+
+  def back
+    @title = "Обратная связь"
+    @product = Product.find_by_id("0")
+  end
+
+  def dop
+    @title = "Дополнительная информация"
+    @product = Product.find_by_id("0")
+  end
+
+  def faq
+    @title = "FAQ"
+    @product = Product.find_by_id("0")
   end
 end

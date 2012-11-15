@@ -1,6 +1,15 @@
 TitanTraid::Application.routes.draw do
+  get "ajax/refpt0"
+  get "ajax/refpt2"
+  get "ajax/refpt3"
+  get "ajax/refpt4"
+  get "ajax/refpt5"
+  get "ajax/refpt"
+  get "ajax/refpt1"
+
   resources :pages
   resources :products
+  resources :ajax
   root :to => 'pages#about'
 
   match '/about', :to => 'pages#about'
@@ -8,6 +17,12 @@ TitanTraid::Application.routes.draw do
   match '/payment', :to => 'pages#payment'
   match '/contact', :to => 'pages#contact'
   match '/map', :to => 'pages#map'
+  match '/lic', :to => 'pages#lic'
+  match '/back', :to => 'pages#back'
+  match '/dop', :to => 'pages#dop'
+  match '/faq', :to => 'pages#faq'
+
+  match '/search', :to => 'products#search'
 
   match "/products/:id" => "products#show"
 

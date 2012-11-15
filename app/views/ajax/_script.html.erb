@@ -1,0 +1,18 @@
+<script>
+  		$(function() {
+
+  		$(".block").css({ backgroundColor: "RGB(255, 255, 255)" });
+
+  		$("td").children("a").mouseover(function(){
+          $(this).parent("td").animate({ backgroundColor: "RGB(199, 199, 199)"}, 300 );
+          $(this).parent("td").dequeue('fx');
+          });
+
+
+         $("td").children("a").mouseout(function(){
+          $(this).parent("td").animate({ backgroundColor: "RGB(255, 255, 255)"}, 290 );
+          $(this).parent("td").dequeue('fx');
+          });	
+        });
+        
+</script>

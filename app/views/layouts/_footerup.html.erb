@@ -1,0 +1,57 @@
+<script>
+      $(function(){
+
+      	$(".up#s").mouseover(function(){
+          $(".up#s").animate({opacity:0}, 150);
+          $(".up#a").animate({opacity:1.0}, 150);
+          $(this).css("cursor", "pointer");
+          $(".up").dequeue('fx');
+        });
+
+      	$(".up#s").mouseout(function(){
+          $(".up#a").animate({opacity:0}, 150);
+          $(".up#s").animate({opacity:1.0}, 150);
+          $(".up").dequeue('fx');
+        });
+
+      	$(".up").click(function(){
+      	  $('html, body').animate({
+      	  	scrollTop: $(".im").offset().top}, 300);
+        });
+
+       });
+</script>
+
+<div class="up" id="a">
+</div>
+
+<div class="up" id="s">
+</div>
+
+<div class="adres">
+	Наш адрес: Бердичев, ул. Пушкина<br>
+	дом: Колотушкина - гамазин<br>
+	теплооборудования "Титан-трейд"<br>
+	Контактный телефон: +7 (400) 999-00-11
+</div>
+
+<div class="menbot">
+<nav class="men">
+	<ul class="mm">
+		  <li><%= link_to "О компании", root_path %></li>
+          <li><%= link_to "Сертификаты", sert_path %></li>
+          <li><%= link_to "Доставка и оплата", payment_path %></li>
+          <li><%= link_to "Контакты", contact_path %></li>
+          <li><%= link_to "Карта сайта", map_path %></li>
+          <li><%= link_to "Карта сайта", map_path %></li>
+	</ul>
+</nav>
+</div>
+
+<div class="menbot1">
+<nav class="men">
+	<ul class="mm">
+		  <li><%= link_to "Дополнительная информация", dop_path %></li>
+          <li><%= link_to "FAQ", faq_path %></li>
+</nav>
+</div>

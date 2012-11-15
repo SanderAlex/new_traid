@@ -4,10 +4,24 @@
   <title>Титан-трейд | <%= @title %></title>
   <%= render 'layouts/stylesheets' %>
   <%= jquery %>
+  <%= javascript_include_tag :defaults %>
+  <%= csrf_meta_tags %>
 </head>
 <body>
   <div class="container">
     <%= render 'layouts/header' %>
+    <div class="picture" id="ind">
+    </div>
+    <div class="picture" id="about">
+    </div>
+    <div class="picture" id="sert">
+    </div>
+    <div class="picture" id="pay">
+    </div>
+    <div class="picture" id="cont">
+    </div>
+    <div class="picture" id="map">
+    </div>
 
     <div class="orange">
     </div>
@@ -16,9 +30,16 @@
       <%= render 'layouts/left' %>
     </section>
 
-    <div class="name">	
+    <div class="name" id="name12">	
   		<%= yield %>
+    <div class="tovar" id="tov"></div>
   	</div>
+    <div class="foot">
+      <div id="foot"></div>
+      <div id="foot0"><%= render 'layouts/footerup' %></div>
+      <div id="foot1"><%= render 'layouts/footerdown' %></div>
+    </div>
   </div>
+
 </body>
 </html>
