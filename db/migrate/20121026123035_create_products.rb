@@ -7,6 +7,7 @@ class CreateProducts < ActiveRecord::Migration
       t.string :subsection
 
       t.timestamps
+
     end
   end
 end

@@ -2,7 +2,7 @@
 
 <div class="tovar">
 	<div class="img">
-	<%= image_tag("#{ @product.id }.jpg", :size => "256x256", :alt => "#{ @product.name }.jpg") %>
+	<%= image_tag("#{ @product.avatar.url }", :size => "256x256", :alt => "#{ @product.name }.jpg") %>
 	</div>
 	<p id="dscr"><%= @product.description %></p>
 </div>

@@ -373,3 +373,13 @@ p.s {
 	margin-top: 9px;
 	font-size: medium;
 }
+
+table.admin a {
+	color: black;
+}
+
+p.pog {
+	margin-left: -105px;
+	text-align: justify;
+	margin-right: 25px;
+}

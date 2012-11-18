@@ -6,8 +6,8 @@
 	<tr>
         <% product_group.each do |product| %>
         <td class="block">
-            <%= link_to product, :target => "_blank" do %>
-            <%= image_tag("#{product.id}.jpg", :size => "192x192", :alt => "#{product.name}.jpg") %>
+            <%= link_to product do %>
+            <%= image_tag("#{ product.avatar.url }", :size => "192x192", :alt => "#{product.name}.jpg") %>
             <% end %><br>
             <%= product.name %>
         </td>

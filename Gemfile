@@ -53,9 +53,7 @@ gem 'fastercsv'
 
 gem 'net-ldap'
 
-gem "paperclip", "~> 2.0"
-
-gem 'comfortable_mexican_sofa'
+gem 'carrierwave'
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'

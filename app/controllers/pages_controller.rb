@@ -1,4 +1,7 @@
 class PagesController < ApplicationController
+
+http_basic_authenticate_with :name => "admin", :password => "admin", :only => [:admin]
+
   def about
     @title = "О компании"
     @product = Product.find_by_id("0")
@@ -41,6 +44,11 @@ class PagesController < ApplicationController
 
   def faq
     @title = "FAQ"
+    @product = Product.find_by_id("0")
+  end
+
+  def admin
+    @title ="admin"
     @product = Product.find_by_id("0")
   end
 end

@@ -1,5 +1,10 @@
 class Product < ActiveRecord::Base
-	attr_accessible :name, :description, :section, :subsection
+	attr_accessible :avatar, :name, :description, :section, :subsection
+	validates :name, :presence => true
+	validates :section, :presence => true
+	validates :subsection, :presence => true
+
+	mount_uploader :avatar, AvatarUploader
 
 def self.search(search)
   search_condition = "%" + search + "%"

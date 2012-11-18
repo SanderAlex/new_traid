@@ -22,6 +22,10 @@ TitanTraid::Application.routes.draw do
   match '/dop', :to => 'pages#dop'
   match '/faq', :to => 'pages#faq'
 
+  match '/admin', :to => 'products#index'
+  match '/new', :to => 'products#new'
+  match '/edit', :to => 'products#edit'
+
   match '/search', :to => 'products#search'
 
   match "/products/:id" => "products#show"
