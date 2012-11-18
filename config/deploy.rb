@@ -56,7 +56,7 @@ end
 
 # Имя вашего проекта в панели управления.
 # Не меняйте это значение без необходимости, оно используется дальше.
-set :application,     "titan"
+set :application,     "titan-traid"
 
 # Сервер размещения проекта.
 set :deploy_server,   "neon.locum.ru"
