@@ -1,5 +1,7 @@
 class ProductsController < ApplicationController
 
+http_basic_authenticate_with :name => "admin", :password => "admin", :except => [:show, :search]
+
 	def index
 		@products = Product.all
 		@product = Product.find_by_id("0")
