@@ -63,8 +63,8 @@ set :deploy_server,   "neon.locum.ru"
 # Не включать в поставку разработческие инструменты и пакеты тестирования.
 set :bundle_without,  [:development, :test]
 
-set :user,            "hosting_spiritd"
-set :login,           "spiritd"
+set :user,            "hosting_titant"
+set :login,           "titant"
 set :use_sudo,        false
 set :deploy_to,       "/home/#{user}/projects/#{application}"
 set :unicorn_conf,    "/etc/unicorn/#{application}.#{login}.rb"
