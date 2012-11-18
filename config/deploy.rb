@@ -33,14 +33,23 @@ load 'deploy/assets'
 
 namespace :deploy do
   namespace :assets do
+ 
+    def not_first_deploy?
+      'true' ==  capture("if [ -e #{current_path}/REVISION ]; then echo 'true'; fi").strip
+    end
+ 
+    desc "Run the asset precompilation rake task only if there are changes."
     task :precompile, :roles => :web, :except => { :no_release => true } do
-      from = source.next_revision(current_revision)
-      if capture("cd #{latest_release} && #{source.local.log(from)} vendor/assets/ app/assets/ lib/assets | wc -l").to_i > 0
-        run %Q{cd #{latest_release} && #{rake} RAILS_ENV=#{rails_env} #{asset_env} assets:precompile}
-      else
-        logger.info "Skipping asset pre-compilation because there were no asset changes"
+      if not_first_deploy?
+        from = source.next_revision(current_revision)
+        if capture("cd #{latest_release} && #{source.local.log(from)} vendor/assets/ app/assets/ | wc -l").to_i > 0
+          run %Q{cd #{latest_release} && #{rake} RAILS_ENV=#{rails_env} #{asset_env} assets:precompile}
+        else
+          logger.info "Skipping asset pre-compilation because there were no asset changes"
+        end
       end
     end
+ 
   end
 end
 
@@ -55,7 +64,7 @@ end
 
 # Имя вашего проекта в панели управления.
 # Не меняйте это значение без необходимости, оно используется дальше.
-set :application,     "titant"
+set :application,     "titan-traid"
 
 # Сервер размещения проекта.
 set :deploy_server,   "neon.locum.ru"
@@ -63,8 +72,8 @@ set :deploy_server,   "neon.locum.ru"
 # Не включать в поставку разработческие инструменты и пакеты тестирования.
 set :bundle_without,  [:development, :test]
 
-set :user,            "hosting_titant"
-set :login,           "titant"
+set :user,            "hosting_spiritd"
+set :login,           "spiritd"
 set :use_sudo,        false
 set :deploy_to,       "/home/#{user}/projects/#{application}"
 set :unicorn_conf,    "/etc/unicorn/#{application}.#{login}.rb"
@@ -103,8 +112,7 @@ task :set_current_release, :roles => :app do
 end
 
   set :default_environment, {
-  'PATH' => "$HOME/.rbenv/shims:$HOME/.rbenv/bin:$PATH"
-}
+ 'PATH' => "$HOME/.rbenv/shims:$HOME/.rbenv/bin:$PATH"}
 
   set :unicorn_start_cmd, "(cd #{deploy_to}/current; rvm use #{rvm_ruby_string} do bundle exec unicorn_rails -Dc #{unicorn_conf})"
 
