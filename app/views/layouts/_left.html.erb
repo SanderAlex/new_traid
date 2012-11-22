@@ -3,6 +3,8 @@
 
           $(".n:not(#<%= @product.section %>)").hide();
           $(".n#<%= @product.subsection %>").slideToggle();
+          $("h5 a:contains('<%= @product.name %>')").css("color", "RGB(255, 204, 66)");
+          $("h5 a:contains('<%= @product.name %>')").css("text-decoration", "underline");
 
           $("h5").mouseover(function(){
             $(this).css({ color: "RGB(255, 204, 66)", cursor:"pointer" });

@@ -19,6 +19,10 @@ this product from being saved:</h2>
 <%= f.text_area :description %>
 </div>
 <div class="field">
+<%= f.label :table %><br />
+<%= f.text_area :table %>
+</div>
+<div class="field">
 <%= f.label :section %><br />
 <%= f.text_field :section %>
 </div>
@@ -27,7 +31,20 @@ this product from being saved:</h2>
 <%= f.text_field :subsection %>
 </div>
 
-<%= f.file_field :avatar %>
+Avatar<br>
+<%= f.file_field :avatar %><br>
+<%= image_tag (@product.avatar.url) if @product.avatar? %>
+	<br>	<br>
+
+Picture<br>
+<%= f.file_field :picture %><br>
+<%= image_tag (@product.picture.url) if @product.picture? %>
+	<br>	<br>
+
+Picture1<br>
+<%= f.file_field :picture1 %><br>
+<%= image_tag (@product.picture1.url) if @product.picture1? %>
+	<br>	<br>	
 
 <div class="actions">
 	<br>

@@ -1,0 +1,77 @@
+<header>
+    <script>
+      $(function(){
+
+        $(".picture#ind").animate({opacity:0});
+        $(".picture#cont").animate({opacity:1.0});
+        $("#cont").animate({borderWidth: "5px"});
+        $("#cn").css("color", "RGB(255, 204, 66)");
+
+        $(".ss").children("a").mouseover(function(){
+          $(this).parent(".ss").animate({
+            borderWidth: "5px"}, 300 );
+          $(this).parent(".ss").dequeue('fx');
+          });
+        $(".ss:not(#cont)").children("a").mouseout(function(){
+          $(this).parent(".ss").animate({
+            borderWidth: "0"}, 290 );
+        $(this).parent(".ss").dequeue('fx');
+        });
+
+        $("#sert").mouseover(function(){
+          $(".picture#cont").animate({opacity:0}, 600);
+          $(".picture#sert").animate({opacity:1.0}, 600);
+          $(".picture").dequeue('fx');
+        });
+
+
+        $("#sert").mouseout(function(){
+          $(".picture#cont").animate({opacity:1.0}, 590);
+          $(".picture#sert").animate({opacity:0}, 590);
+          $(".picture").dequeue('fx');
+        });
+
+
+        $("#pay").mouseover(function(){
+          $(".picture#cont").animate({opacity:0}, 600);
+          $(".picture#pay").animate({opacity:1.0}, 600);
+          $(".picture").dequeue('fx');
+        });
+
+
+        $("#pay").mouseout(function(){
+          $(".picture#cont").animate({opacity:1.0}, 590);
+          $(".picture#pay").animate({opacity:0}, 590);
+          $(".picture").dequeue('fx');
+        });
+
+
+        $("#about").mouseover(function(){
+          $(".picture#cont").animate({opacity:0}, 600);
+          $(".picture#about").animate({opacity:1.0}, 600);
+          $(".picture").dequeue('fx');
+        });
+
+
+        $("#about").mouseout(function(){
+          $(".picture#cont").animate({opacity:1.0}, 590);
+          $(".picture#about").animate({opacity:0}, 590);
+          $(".picture").dequeue('fx');
+        });
+
+
+        $("#map").mouseover(function(){
+          $(".picture#cont").animate({opacity:0}, 600);
+          $(".picture#map").animate({opacity:1.0}, 600);
+          $(".picture").dequeue('fx');
+        });
+
+
+        $("#map").mouseout(function(){
+          $(".picture#cont").animate({opacity:1.0}, 590);
+          $(".picture#map").animate({opacity:0}, 590);
+          $(".picture").dequeue('fx');
+        });
+
+      });
+    </script>

@@ -1,18 +1,48 @@
-<%= render 'ajax/script' %>
+<script>
+  	$(function() {
+
+  		$(".buts#b1b").children("a").click(function(){
+      
+            $("nav ul li.list#1").next("section").slideDown("slow")
+            .siblings("section:visible").slideUp("slow");
+
+            $("h5#a").next("section").slideDown("slow")
+            .siblings("section:visible").slideUp("slow");
+  		})
+
+  		$(".buts#b2b").children("a").click(function(){
+      
+            $("nav ul li.list#1").next("section").slideDown("slow")
+            .siblings("section:visible").slideUp("slow");
+
+  			$("h5#b").next("section").slideDown("slow")
+            .siblings("section:visible").slideUp("slow");
+  		})
+
+      $(".buts").children("a").mouseover(function(){
+          $(this).parent(".buts").animate({ backgroundColor: "RGB(199, 199, 199)"}, 300 );
+          $(this).parent(".buts").dequeue('fx');
+          });
+
+
+         $(".buts").children("a").mouseout(function(){
+          $(this).parent(".buts").animate({ backgroundColor: "RGB(255, 255, 255)"}, 290 );
+          $(this).parent(".buts").dequeue('fx');
+          }); 
+
+        });
+
+</script>
 <div class="limit">
-	<table>
-		<% refresh0 %>
-		<% @products.in_groups_of(3, false) do |product_group| %>
-	<tr>
-        <% product_group.each do |product| %>
-        <td class="block">
-            <%= link_to product do %>
-            <%= image_tag("#{ product.avatar.url }", :size => "192x192", :alt => "#{product.name}.jpg") %>
+    <div class="buts" id="b1b">
+    	    <%= link_to ajax_refpt_path, :remote => true do %>
+            <%= image_tag("1084_173.jpg", :size => "192x192", :alt => "Встраиваемые отопительные модули") %>
             <% end %><br>
-            <%= product.name %>
-        </td>
-        <% end %>
-    </tr>
-        <% end %>
- 	</table>
+            Встраиваемые отопительные модули
+    </div>
+    <div class="buts" id="b2b">
+    	    <%= link_to ajax_refpt1_path, :remote => true do %>
+            <%= image_tag("1084_173.jpg", :size => "192x192", :alt => "Модули в блок-контейнере") %>
+            <% end %><br>
+            Модули в блок-контейнере</div>
 </div>

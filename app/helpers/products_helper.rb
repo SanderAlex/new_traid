@@ -23,4 +23,5 @@ module ProductsHelper
 	def list5
 		@products = Product.find_all_by_section("5")
 	end
+
 end

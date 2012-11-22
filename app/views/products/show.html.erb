@@ -1,8 +1,22 @@
+<%= render 'layouts/scr' %>
+
 <h1><%= @product.name %></h1>
 
 <div class="tovar">
-	<div class="img">
-	<%= image_tag("#{ @product.avatar.url }", :size => "256x256", :alt => "#{ @product.name }.jpg") %>
-	</div>
-	<p id="dscr"><%= @product.description %></p>
+
+<% if @product.avatar? then %>
+<%= render 'products/av' %>
+<% end %>
+
+<% if @product.picture? then %>
+<%= render 'products/pc' %>
+<% end %>
+
+<% if @product.picture1? then %>
+<%= render 'products/pc1' %>
+<% end %>
+
+<p id="dscr"><%= @product.description %></p>
+
+<textarea class="tp" disabled readonly><%= @product.table %></textarea>
 </div>

@@ -1,6 +1,6 @@
-<script>
-  		$(function() {
-
+<header>
+    <script>
+      $(function(){
         $(".ss").children("a").mouseover(function(){
           $(this).parent(".ss").animate({
             borderWidth: "5px"}, 300 );
@@ -80,39 +80,5 @@
           $(".picture").dequeue('fx');
         });
 
-
-  		$(".block").css({ backgroundColor: "RGB(255, 255, 255)" });
-
-  		$("td").children("a").mouseover(function(){
-          $(this).parent("td").animate({ backgroundColor: "RGB(199, 199, 199)"}, 300 );
-          $(this).parent("td").dequeue('fx');
-          });
-
-
-         $("td").children("a").mouseout(function(){
-          $(this).parent("td").animate({ backgroundColor: "RGB(255, 255, 255)"}, 290 );
-          $(this).parent("td").dequeue('fx');
-          });	
-        });
-        
-</script>
-
-<h1>Поиск по "<%= params[:search] %>"</h1>
-<div class="tovar">
-  <div class="limit">
-	<table>
-		<% @products.in_groups_of(3, false) do |product_group| %>
-	<tr>
-        <% product_group.each do |product| %>
-        <td class="block">
-            <%= link_to product, :target => "_blank" do %>
-            <%= image_tag("#{product.id}.jpg", :size => "192x192", :alt => "#{product.name}.jpg") %>
-            <% end %><br>
-            <%= product.name %>
-        </td>
-        <% end %>
-    </tr>
-        <% end %>
- 	</table>
-</div>
-</div>
+      });
+    </script>
