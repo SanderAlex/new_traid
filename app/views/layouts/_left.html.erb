@@ -3,8 +3,8 @@
 
           $(".n:not(#<%= @product.section %>)").hide();
           $(".n#<%= @product.subsection %>").slideToggle();
-          $("h5 a:contains('<%= @product.name %>')").css("color", "RGB(255, 204, 66)");
-          $("h5 a:contains('<%= @product.name %>')").css("text-decoration", "underline");
+          $("a.<%= @product.id %>").css("color", "RGB(255, 204, 66)");
+          $("a.<%= @product.id %>").css("text-decoration", "underline");
 
           $("h5").mouseover(function(){
             $(this).css({ color: "RGB(255, 204, 66)", cursor:"pointer" });
@@ -24,7 +24,15 @@
 
             $(this).parent(".list").next("section").slideToggle("slow")
             .siblings("section:visible").slideUp("slow");
-
+            $(".picture#ind").animate({opacity:1.0});
+            $(".picture#about").animate({opacity:0});
+            $(".picture#sert").animate({opacity:0});
+            $(".picture#cont").animate({opacity:0});
+            $(".picture#pay").animate({opacity:0});
+            $(".picture#map").animate({opacity:0});
+            $(".ss").animate({borderWidth: "0"}, 300 );
+            $(".ss").children("a").css("color", "white");
+            $pic = 1;
         	});
           
           
@@ -84,7 +92,7 @@
                   <section class="n" id="a">
                   <% list %>
                   <% @products.each do |product| %>
-                  <h5><%= link_to product.name, product %></h5>
+                  <h5><%= link_to product.name, product, :class => product.id %></h5>
                   <% end %>
               </section>
 
@@ -92,17 +100,17 @@
               <section class="n" id="b">
                   <% list1 %>
                   <% @products.each do |product| %>
-                  <h5><%= link_to product.name, product %></h5>
+                  <h5><%= link_to product.name, product, :class => product.id %></h5>
                   <% end %>
             </section>
 
           </section>
 
-    <li class="list" id="2"><%= link_to "Пульты управления<br />электрокотельными".html_safe, ajax_refpt2_path, :remote => true %></li>
+    <li class="list" id="2"><%= link_to "Пульты управления<br />электрокотельными".html_safe, ajax_refpt2_path, :class => "dub", :remote => true %></li>
       <section class="n" id="2">
         <% list2 %>
         <% @products.each do |product| %>
-        <h5><%= link_to product.name, product %></h5>
+        <h5><%= link_to product.name, product, :class => product.id %></h5>
         <% end %>
       </section> 
 
@@ -110,7 +118,7 @@
       <section class="n" id="3">
         <% list3 %>
         <% @products.each do |product| %>
-        <h5><%= link_to product.name, product %></h5>
+        <h5><%= link_to product.name, product, :class => product.id %></h5>
         <% end %>
       </section>
 
@@ -118,7 +126,7 @@
       <section class="n" id="4">
         <% list4 %>
         <% @products.each do |product| %>
-        <h5><%= link_to product.name, product %></h5>
+        <h5><%= link_to product.name, product, :class => product.id %></h5>
         <% end %>
       </section>
        
@@ -126,7 +134,7 @@
       <section class="n" id="5">
         <% list5 %>
         <% @products.each do |product| %>
-        <h5><%= link_to product.name, product %></h5>
+        <h5><%= link_to product.name, product, :class => product.id %></h5>
         <% end %>
       </section> 
 </ul>

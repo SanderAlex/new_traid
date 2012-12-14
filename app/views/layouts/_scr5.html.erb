@@ -1,5 +1,6 @@
 <header>
     <script>
+        var $pic = 0;
       $(function(){
 
         $(".picture#ind").animate({opacity:0});
@@ -11,67 +12,164 @@
           $(this).parent(".ss").animate({
             borderWidth: "5px"}, 300 );
           $(this).parent(".ss").dequeue('fx');
+          if ($pic == 1) {
+          $(this).css("color", "RGB(255, 204, 66)");
+        }
           });
-        $(".ss:not(#map)").children("a").mouseout(function(){
+        $(".ss").children("a").mouseout(function(){
+          if ($pic == 0) {
+          $(this).parent(".ss:not(#map)").animate({
+            borderWidth: "0"}, 290 );
+        $(this).parent(".ss").dequeue('fx');
+      }
+          else if ($pic == 1) {
           $(this).parent(".ss").animate({
             borderWidth: "0"}, 290 );
         $(this).parent(".ss").dequeue('fx');
+        $(this).css("color", "white");
+      }
         });
+
+          $("#map").mouseover(function(){
+            if ($pic == 1) {
+          $(".picture#ind").animate({opacity:0}, 600);
+          $(".picture#map").animate({opacity:1.0}, 600);
+          $(".picture").dequeue('fx');
+          $(this).parent(".ss").animate({
+            borderWidth: "5px"}, 300 );
+          $(this).parent(".ss").dequeue('fx');
+        }
+        });
+
+
+        $("#map").mouseout(function(){
+            if ($pic == 1) {
+          $(".picture#ind").animate({opacity:1.0}, 590);
+          $(".picture#map").animate({opacity:0}, 590);
+          $(".picture").dequeue('fx');
+          $(this).parent(".ss").animate({
+            borderWidth: "0"}, 290 );
+          $(this).parent(".ss").dequeue('fx');
+        }
+        });
+
 
         $("#sert").mouseover(function(){
-          $(".picture#map").animate({opacity:0}, 600);
-          $(".picture#sert").animate({opacity:1.0}, 600);
-          $(".picture").dequeue('fx');
+          if ($pic == 0) {
+            $(".picture#map").animate({opacity:0}, 600);
+            $(".picture#sert").animate({opacity:1.0}, 600);
+            $(".picture").dequeue('fx');
+        }
+          else if ($pic == 1) {
+            $(".picture#ind").animate({opacity:0}, 600);
+            $(".picture#sert").animate({opacity:1.0}, 600);
+            $(".picture").dequeue('fx');
+          }
         });
 
-
         $("#sert").mouseout(function(){
+
+                    if ($pic == 0) {
           $(".picture#map").animate({opacity:1.0}, 590);
           $(".picture#sert").animate({opacity:0}, 590);
           $(".picture").dequeue('fx');
+        }
+          else if ($pic == 1) {
+          $(".picture#ind").animate({opacity:1.0}, 590);
+          $(".picture#sert").animate({opacity:0}, 590);
+          $(".picture").dequeue('fx');
+          }
         });
 
 
         $("#pay").mouseover(function(){
+
+
+        if ($pic == 0) {
           $(".picture#map").animate({opacity:0}, 600);
           $(".picture#pay").animate({opacity:1.0}, 600);
           $(".picture").dequeue('fx');
+        }
+        else if ($pic == 1) {
+          $(".picture#ind").animate({opacity:0}, 600);
+          $(".picture#pay").animate({opacity:1.0}, 600);
+          $(".picture").dequeue('fx');
+          }
         });
 
 
         $("#pay").mouseout(function(){
+        if ($pic == 0) {
           $(".picture#map").animate({opacity:1.0}, 590);
           $(".picture#pay").animate({opacity:0}, 590);
           $(".picture").dequeue('fx');
+        }
+        else if ($pic == 1) {
+          $(".picture#ind").animate({opacity:1.0}, 590);
+          $(".picture#pay").animate({opacity:0}, 590);
+          $(".picture").dequeue('fx');
+          }
+
+
         });
 
 
         $("#cont").mouseover(function(){
+        if ($pic == 0) {
           $(".picture#map").animate({opacity:0}, 600);
           $(".picture#cont").animate({opacity:1.0}, 600);
           $(".picture").dequeue('fx');
+        }
+        else if ($pic == 1) {
+          $(".picture#ind").animate({opacity:0}, 600);
+          $(".picture#cont").animate({opacity:1.0}, 600);
+          $(".picture").dequeue('fx');
+          }
         });
 
 
         $("#cont").mouseout(function(){
+        if ($pic == 0) {
           $(".picture#map").animate({opacity:1.0}, 590);
           $(".picture#cont").animate({opacity:0}, 590);
           $(".picture").dequeue('fx');
+        }
+        else if ($pic == 1) {
+          $(".picture#ind").animate({opacity:1.0}, 590);
+          $(".picture#cont").animate({opacity:0}, 590);
+          $(".picture").dequeue('fx');
+          }
         });
 
 
         $("#about").mouseover(function(){
+                  if ($pic == 0) {
           $(".picture#map").animate({opacity:0}, 600);
           $(".picture#about").animate({opacity:1.0}, 600);
           $(".picture").dequeue('fx');
+        }
+        else if ($pic == 1) {
+          $(".picture#ind").animate({opacity:0}, 600);
+          $(".picture#about").animate({opacity:1.0}, 600);
+          $(".picture").dequeue('fx');
+          }
+
         });
 
 
         $("#about").mouseout(function(){
+                  if ($pic == 0) {
           $(".picture#map").animate({opacity:1.0}, 590);
           $(".picture#about").animate({opacity:0}, 590);
           $(".picture").dequeue('fx');
-        });
+        }
+        else if ($pic == 1) {
+          $(".picture#ind").animate({opacity:1.0}, 590);
+          $(".picture#about").animate({opacity:0}, 590);
+          $(".picture").dequeue('fx');
+          }
 
+        });
       });
+
     </script>

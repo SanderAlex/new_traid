@@ -11,11 +11,10 @@
       </nav>
 
 <div class="search">
-<div class="srch"></div>
-<div class="insr"></div>
-<%= form_tag search_path, :method => 'get' do %>
+<%= form_tag search_path :method => 'get' do %>
     <%= text_field_tag :search, params[:search], :id => 'search_field'  %>
 <% end %>
+<%= image_tag("srch.png", :size => "25x20", :alt => "Титан-трейд", :id => 'srch') %>
 </div>
 
     </header>

@@ -24,4 +24,8 @@ module ProductsHelper
 		@products = Product.find_all_by_section("5")
 	end
 
+	def nl2br(s)
+  		s.gsub(/\n/, '<br>')
+	end
+
 end

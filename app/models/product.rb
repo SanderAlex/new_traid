@@ -1,5 +1,5 @@
 class Product < ActiveRecord::Base
-	attr_accessible :avatar, :name, :description, :section, :subsection, :picture, :picture1, :table
+	attr_accessible :avatar, :name, :description, :section, :subsection, :picture, :picture1
 	validates :name, :presence => true
 	validates :section, :presence => true
 

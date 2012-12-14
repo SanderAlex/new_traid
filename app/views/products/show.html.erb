@@ -4,19 +4,23 @@
 
 <div class="tovar">
 
-<% if @product.avatar? then %>
-<%= render 'products/av' %>
-<% end %>
-
 <% if @product.picture? then %>
 <%= render 'products/pc' %>
 <% end %>
-
+<table class="tp">
+	<th>
+<% if @product.avatar? then %>
+<%= render 'products/av' %>
+<% end %>
+	</th>
+	<th>
 <% if @product.picture1? then %>
 <%= render 'products/pc1' %>
 <% end %>
+	</th>
+</table>
+<p id="dscr"><%= raw(nl2br(h(@product.description))) %></p>
 
-<p id="dscr"><%= @product.description %></p>
+<div class="podval">Всю информацию можете уточнить то телефону <br> или написав нам письмо на <a href="mailto:info@titan-traid.ru" style="color: RGB(255, 204, 66); font-weight: bold;">info@titan-traid.ru</a></div>
 
-<textarea class="tp" disabled readonly><%= @product.table %></textarea>
 </div>

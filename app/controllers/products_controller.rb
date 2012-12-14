@@ -8,10 +8,12 @@ http_basic_authenticate_with :name => "admin", :password => "admin", :except => 
 	end
 
 	def show
+		@title = Product.find(params[:id]).name
 		@product = Product.find(params[:id])
 	end
 
 	def search
+		@title = "Поиск"
   		@products = Product.search(params[:search])
   		@product = Product.find_by_id("0")
 	end
