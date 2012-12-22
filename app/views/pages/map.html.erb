@@ -1,3 +1,43 @@
 <%= render 'layouts/scr5' %>
 <h1>Карта сайта</h1>
-<p class="pog"></p>
+<p class="pog">
+	<h2>Электрокотельные</h2>
+                <h3>Встраиваемые отопительные модули</h3>
+                  <% list %>
+                  <% @products.each do |product| %>
+                  <h4><%= link_to product.name, product, :class => product.id %></h4>
+                  <% end %>
+
+
+              	<h3>Модули в блок-контейнере</h3>
+                  <% list1 %>
+                  <% @products.each do |product| %>
+                  <h4><%= link_to product.name, product, :class => product.id %></h4>
+                  <% end %>
+
+	<h3>Пульты управления электрокотельными</h3>
+                  <% list2 %>
+                  <% @products.each do |product| %>
+                  <h4><%= link_to product.name, product, :class => product.id %></h4>
+                  <% end %>
+
+    <h3>Электроводонагреватели</h3>
+                  <% list3 %>
+                  <% @products.each do |product| %>
+                  <h4><%= link_to product.name, product, :class => product.id %></h4>
+                  <% end %>
+
+    <h3>Пульты управления электроводонагревателями</h3>
+                  <% list4 %>
+                  <% @products.each do |product| %>
+                  <h4><%= link_to product.name, product, :class => product.id %></h4>
+                  <% end %>
+       
+	<h3>Прочая продукция</h3>
+                  <% list5 %>
+                  <% @products.each do |product| %>
+                  <h4><%= link_to product.name, product, :class => product.id %></h4>
+                  <% end %>
+
+
+</p>

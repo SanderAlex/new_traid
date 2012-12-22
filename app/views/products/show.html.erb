@@ -3,21 +3,22 @@
 <h1><%= @product.name %></h1>
 
 <div class="tovar">
-
-<% if @product.picture? then %>
-<%= render 'products/pc' %>
-<% end %>
 <table class="tp">
-	<th>
+	<td class="nobord">
 <% if @product.avatar? then %>
 <%= render 'products/av' %>
 <% end %>
-	</th>
-	<th>
+	</td>
+	<td>
+<% if @product.picture? then %>
+<%= render 'products/pc' %>
+<% end %>
+	</td>
+	<td>
 <% if @product.picture1? then %>
 <%= render 'products/pc1' %>
 <% end %>
-	</th>
+	</td>
 </table>
 <p id="dscr"><%= raw(nl2br(h(@product.description))) %></p>
 

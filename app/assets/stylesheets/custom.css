@@ -153,7 +153,6 @@ div.tovar {
 
 .img {
 	float: left;
-	margin: 7px 20px 7px 0;
 }
 
 table {
@@ -410,6 +409,10 @@ p.pog a {
 	resize: none;
 }
 
+.tp td {
+	border: none;
+}
+
 #b2b {
 	margin-left: 380px;
 }
@@ -433,7 +436,7 @@ p.pog a {
 }
 
 #abim {
-	margin-left: -120px;
+	margin-left: -105px;
 }
 
 .email {
@@ -457,4 +460,25 @@ p.pog a {
 	text-align: center;
 	opacity: 0.7;
 	font-weight: lighter;
+}
+
+h2 {
+	font-size: 13pt;
+	font-weight: bold;
+	margin-left: -105px;
+}
+
+h3 {
+	font-size: 11pt;
+	margin-left: -85px;
+}
+
+h4 a {
+	color: blue;
+	font-size: 10pt;
+	margin-left: -70px;	
+}
+
+h4 a:hover {
+	text-decoration: underline;
 }

@@ -7,17 +7,17 @@
           $("a.<%= @product.id %>").css("text-decoration", "underline");
 
           $("h5").mouseover(function(){
-            $(this).css({ color: "RGB(255, 204, 66)", cursor:"pointer" });
+            $(this).children("a").css({ color: "RGB(255, 204, 66)", cursor:"pointer" });
           });
           $("h5").mouseout(function(){
-              $(this).css({ color: "white" });
+              $(this).children("a").css({ color: "white" });
           });
 
           $(".n").mouseover(function(){
-            $(this).css({ color: "RGB(255, 204, 66)", cursor:"pointer" });
+            $(this).children("a").css({ color: "RGB(255, 204, 66)", cursor:"pointer" });
           });
           $(".n").mouseout(function(){
-              $(this).css({ color: "white" });
+              $(this).children("a").css({ color: "white" });
           });
 
         	$("nav ul li.list").children("a").click(function(){
@@ -39,6 +39,8 @@
           $(".list#1").children("a").click(function() {
             $('h1').replaceWith("<% refresh0 %><h1><%= @title %></h1>");
             $('.tovar').empty();
+            $("h5").children("a").css({ color: "white" });
+            $("h5").children("a").css("text-decoration", "none");
            });
 
 
@@ -46,12 +48,16 @@
                   $("h5#a").children("a").click(function() {
                   $('h1').replaceWith("<% refresh %><h1><%= @title %></h1>");
                   $('.tovar').empty();
+                  $("h5").children("a").css({ color: "white" });
+                  $("h5").children("a").css("text-decoration", "none");
                   });
 
 
                   $("h5#b").children("a").click(function() {
                   $('h1').replaceWith("<% refresh1 %><h1><%= @title %></h1>");
                   $('.tovar').empty();
+                  $("h5").children("a").css({ color: "white" });
+                  $("h5").children("a").css("text-decoration", "none");
                   });
 
 
@@ -59,21 +65,29 @@
           $(".list#2").children("a").click(function() {
           $('h1').replaceWith("<% refresh2 %><h1><%= @title %></h1>");
           $('.tovar').empty();
+          $("h5").children("a").css({ color: "white" });
+          $("h5").children("a").css("text-decoration", "none");
           });
 
           $(".list#3").children("a").click(function() {
           $('h1').replaceWith("<% refresh3 %><h1><%= @title %></h1>");
           $('.tovar').empty();
+          $("h5").children("a").css({ color: "white" });
+          $("h5").children("a").css("text-decoration", "none");
            });
 
           $(".list#4").children("a").click(function() {
           $('h1').replaceWith("<% refresh4 %><h1><%= @title %></h1>");
           $('.tovar').empty();
+          $("h5").children("a").css({ color: "white" });
+          $("h5").children("a").css("text-decoration", "none");
            });
 
           $(".list#5").children("a").click(function() {
           $('h1').replaceWith("<% refresh5 %><h1><%= @title %></h1>");
           $('.tovar').empty();
+          $("h5").children("a").css({ color: "white" });
+          $("h5").children("a").css("text-decoration", "none");
            });
 
           $("h5").children("a").click(function(){
