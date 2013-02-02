@@ -1,39 +1,40 @@
 <%= render 'layouts/scr5' %>
-<h1>Карта сайта</h1>
+<p class="seo">Карта сайта</p>
 <p class="pog">
-	<h2>Электрокотельные</h2>
-                <h3>Встраиваемые отопительные модули</h3>
+  <br>
+  <h2 id="q"><%= link_to "Электрокотельные", ajax_refpt0_path, :remote => true %></h2>
+                <h3 id="y"><%= link_to "Встраиваемые отопительные модули".html_safe, ajax_refpt_path, :remote => true %></h3>
                   <% list %>
                   <% @products.each do |product| %>
                   <h4><%= link_to product.name, product, :class => product.id %></h4>
                   <% end %>
 
 
-              	<h3>Модули в блок-контейнере</h3>
+                <h3 id="u"><%= link_to "Модули в блок-контейнере", ajax_refpt1_path, :remote => true %></h3>
                   <% list1 %>
                   <% @products.each do |product| %>
                   <h4><%= link_to product.name, product, :class => product.id %></h4>
                   <% end %>
 
-	<h3>Пульты управления электрокотельными</h3>
+  <h2 id="w"><%= link_to "Пульты управления электрокотельными".html_safe, ajax_refpt2_path, :class => "dub", :remote => true %></h2>
                   <% list2 %>
                   <% @products.each do |product| %>
                   <h4><%= link_to product.name, product, :class => product.id %></h4>
                   <% end %>
 
-    <h3>Электроводонагреватели</h3>
+    <h2 id="e"><%= link_to "Электроводонагреватели", ajax_refpt3_path, :remote => true %></h2>
                   <% list3 %>
                   <% @products.each do |product| %>
                   <h4><%= link_to product.name, product, :class => product.id %></h4>
                   <% end %>
 
-    <h3>Пульты управления электроводонагревателями</h3>
+    <h2 id="r"><%= link_to "Пульты управления электроводонагревателями".html_safe, ajax_refpt4_path, :remote => true %></h2>
                   <% list4 %>
                   <% @products.each do |product| %>
                   <h4><%= link_to product.name, product, :class => product.id %></h4>
                   <% end %>
        
-	<h3>Прочая продукция</h3>
+  <h2 id="t"><%= link_to "Прочая продукция", ajax_refpt5_path, :remote => true %></h2>
                   <% list5 %>
                   <% @products.each do |product| %>
                   <h4><%= link_to product.name, product, :class => product.id %></h4>

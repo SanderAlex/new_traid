@@ -1,5 +1,5 @@
-  	<script>
-  		$(function() {
+    <script>
+      $(function() {
 
           $(".n:not(#<%= @product.section %>)").hide();
           $(".n#<%= @product.subsection %>").slideToggle();
@@ -9,8 +9,9 @@
           $("h5").mouseover(function(){
             $(this).children("a").css({ color: "RGB(255, 204, 66)", cursor:"pointer" });
           });
-          $("h5").mouseout(function(){
-              $(this).children("a").css({ color: "white" });
+
+     $("h5").mouseout(function(){
+              $(this).children("a:not(.<%= @product.id %>)").css({ color: "white" });
           });
 
           $(".n").mouseover(function(){
@@ -20,7 +21,7 @@
               $(this).children("a").css({ color: "white" });
           });
 
-        	$("nav ul li.list").children("a").click(function(){
+          $("nav ul li.list").children("a").click(function(){
 
             $(this).parent(".list").next("section").slideToggle("slow")
             .siblings("section:visible").slideUp("slow");
@@ -33,20 +34,22 @@
             $(".ss").animate({borderWidth: "0"}, 300 );
             $(".ss").children("a").css("color", "white");
             $pic = 1;
-        	});
+          });
           
           
           $(".list#1").children("a").click(function() {
-            $('h1').replaceWith("<% refresh0 %><h1><%= @title %></h1>");
+            $('.seo').replaceWith("<% refresh0 %><p class='seo'><%= @title %></p>");
             $('.tovar').empty();
             $("h5").children("a").css({ color: "white" });
             $("h5").children("a").css("text-decoration", "none");
+
+
            });
 
 
 
                   $("h5#a").children("a").click(function() {
-                  $('h1').replaceWith("<% refresh %><h1><%= @title %></h1>");
+                  $('.seo').replaceWith("<% refresh %><p class='seo'><%= @title %></p>");
                   $('.tovar').empty();
                   $("h5").children("a").css({ color: "white" });
                   $("h5").children("a").css("text-decoration", "none");
@@ -54,7 +57,7 @@
 
 
                   $("h5#b").children("a").click(function() {
-                  $('h1').replaceWith("<% refresh1 %><h1><%= @title %></h1>");
+                  $('.seo').replaceWith("<% refresh1 %><p class='seo'><%= @title %></p>");
                   $('.tovar').empty();
                   $("h5").children("a").css({ color: "white" });
                   $("h5").children("a").css("text-decoration", "none");
@@ -63,28 +66,28 @@
 
 
           $(".list#2").children("a").click(function() {
-          $('h1').replaceWith("<% refresh2 %><h1><%= @title %></h1>");
+          $('.seo').replaceWith("<% refresh2 %><p class='seo'><%= @title %></p>");
           $('.tovar').empty();
           $("h5").children("a").css({ color: "white" });
           $("h5").children("a").css("text-decoration", "none");
           });
 
           $(".list#3").children("a").click(function() {
-          $('h1').replaceWith("<% refresh3 %><h1><%= @title %></h1>");
+          $('.seo').replaceWith("<% refresh3 %><p class='seo'><%= @title %></p>");
           $('.tovar').empty();
           $("h5").children("a").css({ color: "white" });
           $("h5").children("a").css("text-decoration", "none");
            });
 
           $(".list#4").children("a").click(function() {
-          $('h1').replaceWith("<% refresh4 %><h1><%= @title %></h1>");
+          $('.seo').replaceWith("<% refresh4 %><p class='seo'><%= @title %></p>");
           $('.tovar').empty();
           $("h5").children("a").css({ color: "white" });
           $("h5").children("a").css("text-decoration", "none");
            });
 
           $(".list#5").children("a").click(function() {
-          $('h1').replaceWith("<% refresh5 %><h1><%= @title %></h1>");
+          $('.seo').replaceWith("<% refresh5 %><p class='seo'><%= @title %></p>");
           $('.tovar').empty();
           $("h5").children("a").css({ color: "white" });
           $("h5").children("a").css("text-decoration", "none");
@@ -94,15 +97,89 @@
             $(this).parent("h5").next("section").slideToggle("slow")
             .siblings("section:visible").slideUp("slow");
           });
-        });
+
+          $("h2#q").children("a").click(function() {
+          $('.seo').replaceWith("<% refresh0 %><p class='seo'><%= @title %></p>");
+            $(".list#1").next("section").slideToggle("slow")
+            .siblings("section:visible").slideUp("slow");
+          });
+
+          $("h2#w").children("a").click(function() {
+          $('.seo').replaceWith("<% refresh2 %><p class='seo'><%= @title %></p>");
+            $(".list#2").next("section").slideToggle("slow")
+            .siblings("section:visible").slideUp("slow");
+          });
+
+          $("h2#e").children("a").click(function() {
+          $('.seo').replaceWith("<% refresh3 %><p class='seo'><%= @title %></p>");
+            $(".list#3").next("section").slideToggle("slow")
+            .siblings("section:visible").slideUp("slow");
+          });
+
+          $("h2#r").children("a").click(function() {
+          $('.seo').replaceWith("<% refresh4 %><p class='seo'><%= @title %></p>");
+            $(".list#4").next("section").slideToggle("slow")
+            .siblings("section:visible").slideUp("slow");
+          });
+
+          $("h2#t").children("a").click(function() {
+          $('.seo').replaceWith("<% refresh5 %><p class='seo'><%= @title %></p>");
+            $(".list#5").next("section").slideToggle("slow")
+            .siblings("section:visible").slideUp("slow");
+          });
+
+          $("h3#y").children("a").click(function() {
+          $('.seo').replaceWith("<% refresh %><p class='seo'><%= @title %></p>");
+            $(".list#1").next("section").slideToggle("slow")
+            .siblings("section:visible").slideUp("slow");
+            $("h5#a").next("section").slideToggle("slow")
+            .siblings("section:visible").slideUp("slow");
+          });
+
+          $("h3#u").children("a").click(function() {
+          $('.seo').replaceWith("<% refresh1 %><p class='seo'><%= @title %></p>");
+            $(".list#1").next("section").slideToggle("slow")
+            .siblings("section:visible").slideUp("slow");
+            $("h5#b").next("section").slideToggle("slow")
+            .siblings("section:visible").slideUp("slow");
+          });
+
+       });
+
+
+
+
+(function (d, w, c) {
+    (w[c] = w[c] || []).push(function() {
+        try {
+            w.yaCounter19435087 = new Ya.Metrika({id:19435087,
+                    clickmap:true,
+                    trackLinks:true,
+                    accurateTrackBounce:true});
+        } catch(e) { }
+    });
+
+    var n = d.getElementsByTagName("script")[0],
+        s = d.createElement("script"),
+        f = function () { n.parentNode.insertBefore(s, n); };
+    s.type = "text/javascript";
+    s.async = true;
+    s.src = (d.location.protocol == "https:" ? "https:" : "http:") + "//mc.yandex.ru/metrika/watch.js";
+
+    if (w.opera == "[object Opera]") {
+        d.addEventListener("DOMContentLoaded", f, false);
+    } else { f(); }
+})(document, window, "yandex_metrika_callbacks");
+
+    
     </script>
 
 <nav class="list1">
   <ul class="list">
-    <li class="list" id="1"><%= link_to "Электрокотельные", ajax_refpt0_path, :remote => true %></li>
+    <li class="list" id="1"><%= link_to "Электрокотельные", ajax_refpt0_path, :remote => true, :class => 'pjax' %></li>
 
             <section class="n" id="1">
-                <h5 id="a"><%= link_to "Встраиваемые<br />отопительные модули".html_safe, ajax_refpt_path, :remote => true %></h5>
+                <h5 id="a"><%= link_to "Встраиваемые<br />отопительные модули".html_safe, ajax_refpt_path, :remote => true, :class => 'pjax'  %></h5>
                   <section class="n" id="a">
                   <% list %>
                   <% @products.each do |product| %>
@@ -110,7 +187,7 @@
                   <% end %>
               </section>
 
-              <h5 id="b"><%= link_to "Модули в блок-контейнере", ajax_refpt1_path, :remote => true %></h5>
+              <h5 id="b"><%= link_to "Модули в блок-контейнере", ajax_refpt1_path, :remote => true, :class => 'pjax'  %></h5>
               <section class="n" id="b">
                   <% list1 %>
                   <% @products.each do |product| %>
@@ -120,7 +197,7 @@
 
           </section>
 
-    <li class="list" id="2"><%= link_to "Пульты управления<br />электрокотельными".html_safe, ajax_refpt2_path, :class => "dub", :remote => true %></li>
+    <li class="list" id="2"><%= link_to "Пульты управления<br />электрокотельными".html_safe, ajax_refpt2_path, :class => "dub", :remote => true, :class => 'pjax'  %></li>
       <section class="n" id="2">
         <% list2 %>
         <% @products.each do |product| %>
@@ -128,7 +205,7 @@
         <% end %>
       </section> 
 
-    <li class="list" id="3"><%= link_to "Электроводонагреватели", ajax_refpt3_path, :remote => true %></li>
+    <li class="list" id="3"><%= link_to "Электроводонагреватели", ajax_refpt3_path, :remote => true, :class => 'pjax'  %></li>
       <section class="n" id="3">
         <% list3 %>
         <% @products.each do |product| %>
@@ -136,7 +213,7 @@
         <% end %>
       </section>
 
-    <li class="list" id="4"><%= link_to "Пульты управления<br />электроводонагревателями".html_safe, ajax_refpt4_path, :remote => true %></li>
+    <li class="list" id="4"><%= link_to "Пульты управления<br />электроводонагревателями".html_safe, ajax_refpt4_path, :remote => true, :class => 'pjax'  %></li>
       <section class="n" id="4">
         <% list4 %>
         <% @products.each do |product| %>
@@ -144,7 +221,7 @@
         <% end %>
       </section>
        
-    <li class="list" id="5"><%= link_to "Прочая продукция", ajax_refpt5_path, :remote => true %></li>
+    <li class="list" id="5"><%= link_to "Прочая продукция", ajax_refpt5_path, :remote => true, :class => 'pjax'  %></li>
       <section class="n" id="5">
         <% list5 %>
         <% @products.each do |product| %>

@@ -32,13 +32,6 @@ Avatar<br>
 <%= image_tag (@product.avatar.url) if @product.avatar? %>
 	<br>	<br>
 
-	<p>
-    <label>
-      <%= f.check_box :remove_avatar %>
-      Remove avatar
-    </label>
-  </p>
-
 Picture<br>
 <%= f.file_field :picture %><br>
 <%= image_tag (@product.picture.url) if @product.picture? %>

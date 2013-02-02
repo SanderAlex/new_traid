@@ -18,7 +18,7 @@ div {
 
 .container {
   width: 980px;
-  height: 1200px;
+  height: 950px;
   min-height: 100%;
   position: relative;
 }
@@ -28,10 +28,12 @@ nav.menu  {
 	height: 151px;
 	white-space: nowrap;
 	margin-top: -20px;
+
 }
 
 nav.menu ul {
   padding-left: 360px;
+  margin-left: 7px;
 }
 
 nav.menu ul li {
@@ -43,7 +45,7 @@ nav ul li.ss {
   list-style-type: none;
   display: inline-block;
   border-bottom: 0 solid RGB(255, 204, 66);
-  margin: 120px 2px;
+  margin: 120px 3px;
 }
 
 a {
@@ -83,9 +85,11 @@ a:hover {
 	padding-bottom: 100px; 
 }
 
-h1 {
+p.seo {
 	color: RGB(255, 204, 66);
-	height: 100px;
+	height: 70px;
+	font-size: 3em;
+	line-height: 1.2;
 }
 
 .im {
@@ -218,11 +222,21 @@ p#dscr {
 
 .adres {
 	color: RGB(93, 90, 90);
-	padding-left: 650px;
-	padding-top: 40px;
+	padding-left: 625px;
+	padding-top: 20px;
 	font-weight: bold;
-	line-height: 1.3;
+	line-height: 1.6;
 	position: absolute;
+}
+
+.adres a {
+	color: blue;
+	font-weight: normal;
+	text-decoration: underline;
+}
+
+.adres a:hover {
+	color: orange;
 }
 
 .picture#ind {
@@ -376,6 +390,10 @@ table.admin a {
 	color: black;
 }
 
+table.admin a:hover {
+	color: orange;
+}
+
 p.pog {
 	margin-left: -105px;
 	text-align: justify;
@@ -384,6 +402,11 @@ p.pog {
 
 p.pog a {
  	color: blue;
+ 	text-decoration: underline;
+}
+
+p.pog a:hover {
+ 	color: orange;
  	text-decoration: underline;
 }
 
@@ -462,23 +485,71 @@ p.pog a {
 	font-weight: lighter;
 }
 
-h2 {
-	font-size: 13pt;
-	font-weight: bold;
-	margin-left: -105px;
+.podval a:hover {
+	text-decoration: underline;
 }
 
-h3 {
+h2 a {
+	color: black;
+	font-weight: bold;
+	font-size: 13pt;
+	margin-left: -100px;	
+}
+
+h3 a {
+	color: black;
 	font-size: 11pt;
-	margin-left: -85px;
+	margin-left: -80px;
 }
 
 h4 a {
 	color: blue;
 	font-size: 10pt;
-	margin-left: -70px;	
+	margin-left: -60px;	
 }
 
 h4 a:hover {
 	text-decoration: underline;
+}
+
+h2 a:hover {
+	text-decoration: underline;
+}
+
+h3 a:hover {
+	text-decoration: underline;
+}
+
+.picture {
+	z-index: 0;
+}
+
+.logo a {
+	z-index: 1;
+}
+
+h1 {
+	position: absolute;
+	color: white;
+	font-size: 1em;
+	margin-top: 10px;
+	margin-left: 318px;
+}
+
+.metrika {
+	width: 88px;
+	height: 31px;
+	border: 0;
+	position: absolute;
+	margin-left: 880px;
+	margin-top: 30px;
+}
+
+p.adminka a {
+	color: blue;
+	font-size: 2em;
+}
+
+p.adminka a:hover {
+	color: orange;
 }

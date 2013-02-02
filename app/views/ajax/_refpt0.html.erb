@@ -1,23 +1,23 @@
 <script>
-  	$(function() {
+    $(function() {
 
-  		$(".buts#b1b").children("a").click(function(){
+      $(".buts#b1b").children("a").click(function(){
       
             $("nav ul li.list#1").next("section").slideDown("slow")
             .siblings("section:visible").slideUp("slow");
 
             $("h5#a").next("section").slideDown("slow")
             .siblings("section:visible").slideUp("slow");
-  		})
+      })
 
-  		$(".buts#b2b").children("a").click(function(){
+      $(".buts#b2b").children("a").click(function(){
       
             $("nav ul li.list#1").next("section").slideDown("slow")
             .siblings("section:visible").slideUp("slow");
 
-  			$("h5#b").next("section").slideDown("slow")
+        $("h5#b").next("section").slideDown("slow")
             .siblings("section:visible").slideUp("slow");
-  		})
+      })
 
       $(".buts").children("a").mouseover(function(){
           $(this).parent(".buts").animate({ backgroundColor: "RGB(199, 199, 199)"}, 300 );
@@ -35,14 +35,14 @@
 </script>
 <div class="limit">
     <div class="buts" id="b1b">
-    	    <%= link_to ajax_refpt_path, :remote => true do %>
-            <%= image_tag("vstra.jpg", :size => "192x192", :alt => "Встраиваемые отопительные модули") %>
+          <%= link_to ajax_refpt_path, :remote => true do %>
+            <%= image_tag("modulvbl.jpg", :size => "192x192", :alt => "Встраиваемые отопительные модули") %>
             <% end %><br>
             Встраиваемые отопительные модули
     </div>
     <div class="buts" id="b2b">
-    	    <%= link_to ajax_refpt1_path, :remote => true do %>
-            <%= image_tag("modulvbl.jpg", :size => "192x192", :alt => "Модули в блок-контейнере") %>
+          <%= link_to ajax_refpt1_path, :remote => true do %>
+            <%= image_tag("vstra.jpg", :size => "192x192", :alt => "Модули в блок-контейнере") %>
             <% end %><br>
             Модули в блок-контейнере</div>
 </div>

@@ -1,9 +1,10 @@
-    <%= image_tag("logo.png", :alt => "Титан-трейд") %>
+    <%= image_tag("logo.png", :alt => "Титан-трейд", :class => "logo") %>
       <div class="im"></div>
       <nav class="menu">
+        <h1><strong>Водонагреватели, электрические блочные и модульные котельные - производство и поставка в любой регион</strong></h1>
         <ul>
           <li class="ss" id="about"><%= link_to "О компании", root_path, :id => 'ab' -%></li>
-          <li class="ss" id="sert"><%= link_to "Сертификаты", sert_path, :id => 'sr' -%></li>
+          <li class="ss" id="sert"><%= link_to "Документация", doc_path, :id => 'sr' -%></li>
           <li class="ss" id="pay"><%= link_to "Доставка и оплата", payment_path, :id => 'py' -%></li>
           <li class="ss" id="cont"><%= link_to "Контакты", contact_path, :id => 'cn' -%></li>
           <li class="ss" id="map"><%= link_to "Карта сайта", map_path, :id => 'sm' -%></li>

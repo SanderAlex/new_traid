@@ -7,6 +7,16 @@ http_basic_authenticate_with :name => "admin", :password => "admin", :except => 
 		@product = Product.find_by_id("0")
 	end
 
+	def bd
+		@products = Product.all
+		@product = Product.find_by_id("0")
+	end
+
+	def pg
+		@products = Product.all
+		@product = Product.find_by_id("0")
+	end
+
 	def show
 		@title = Product.find(params[:id]).name
 		@product = Product.find(params[:id])
@@ -64,4 +74,8 @@ http_basic_authenticate_with :name => "admin", :password => "admin", :except => 
 				format.json { head :no_content }
 			end
 	end
+
+	def self.find_published_products
+    	find(:all, :conditions => ["published = ?", true])
+  	end
 end
