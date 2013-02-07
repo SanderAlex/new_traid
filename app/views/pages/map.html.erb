@@ -2,7 +2,7 @@
 <p class="seo">Карта сайта</p>
 <p class="pog">
   <br>
-  <h2 id="q"><%= link_to "Электрокотельные", ajax_refpt0_path, :remote => true %></h2>
+  <h2 id="q"><%= link_to "Модульные электрические котельные", ajax_refpt0_path, :remote => true %></h2>
                 <h3 id="y"><%= link_to "Встраиваемые отопительные модули".html_safe, ajax_refpt_path, :remote => true %></h3>
                   <% list %>
                   <% @products.each do |product| %>
@@ -16,19 +16,19 @@
                   <h4><%= link_to product.name, product, :class => product.id %></h4>
                   <% end %>
 
-  <h2 id="w"><%= link_to "Пульты управления электрокотельными".html_safe, ajax_refpt2_path, :class => "dub", :remote => true %></h2>
+  <h2 id="w"><%= link_to "Щиты управления котельными".html_safe, ajax_refpt2_path, :class => "dub", :remote => true %></h2>
                   <% list2 %>
                   <% @products.each do |product| %>
                   <h4><%= link_to product.name, product, :class => product.id %></h4>
                   <% end %>
 
-    <h2 id="e"><%= link_to "Электроводонагреватели", ajax_refpt3_path, :remote => true %></h2>
+    <h2 id="e"><%= link_to "Электрические котлы", ajax_refpt3_path, :remote => true %></h2>
                   <% list3 %>
                   <% @products.each do |product| %>
                   <h4><%= link_to product.name, product, :class => product.id %></h4>
                   <% end %>
 
-    <h2 id="r"><%= link_to "Пульты управления электроводонагревателями".html_safe, ajax_refpt4_path, :remote => true %></h2>
+    <h2 id="r"><%= link_to "Щиты управления котлами".html_safe, ajax_refpt4_path, :remote => true %></h2>
                   <% list4 %>
                   <% @products.each do |product| %>
                   <h4><%= link_to product.name, product, :class => product.id %></h4>

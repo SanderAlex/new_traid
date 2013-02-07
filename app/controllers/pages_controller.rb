@@ -1,7 +1,7 @@
 class PagesController < ApplicationController
 
   def about
-    @title = "Модульные котельные | Водонагреватели, электрические блочные и модульные котельные - производство и поставка в любой регион"
+    @title = "Модульные котельные"
     @product = Product.find_by_id("0")
   end
 

@@ -2,6 +2,17 @@ TitanTraid::Application.routes.draw do
 
   get 'sitemap', :to => 'sitemap#show'
 
+  match '/Goryachee_vodosnabzhenie', :to => redirect('/Goryachee_vodosnabzhenie.pdf')
+  match '/Modulnaya_elektricheskaya_kotelnaya_EK-_1200BKm', :to => redirect('/Modulnaya_elektricheskaya_kotelnaya_EK-_1200BKm.pdf')
+  match '/Modulnaya_elektricheskaya_kotelnaya_EK-50G', :to => redirect('/Modulnaya_elektricheskaya_kotelnaya_EK-50G.pdf')
+  match '/Modulnaya_elektricheskaya_kotelnaya_EK-100', :to => redirect('/Modulnaya_elektricheskaya_kotelnaya_EK-100.pdf')
+  match '/Modulnye_elektricheskie_kotelnye_EK-200_EK-26', :to => redirect('/Modulnye_elektricheskie_kotelnye_EK-200_EK-26.pdf')
+  match '/Modulnye_elektricheskie_kotelnye_EK-200BK_EK', :to => redirect('/Modulnye_elektricheskie_kotelnye_EK-200BK_EK.pdf')
+  match '/Schit_upravlenia_kotlom_EPZ-250', :to => redirect('/Schit_upravlenia_kotlom_EPZ-250.pdf')
+  match '/Schity_upravlenia_EPZ-100_EPZ-50_EPZ-25', :to => redirect('/Schity_upravlenia_EPZ-100_EPZ-50_EPZ-25.pdf')
+  match '/Elektricheskie_kotly_EPZ-25i6_EPZ-50i2_EPZ-100', :to => redirect('/Elektricheskie_kotly_EPZ-25i6_EPZ-50i2_EPZ-100.pdf')
+  match '/Elektrichesky_kotel_EPZ-25i2', :to => redirect('/Elektrichesky_kotel_EPZ-25i2.pdf')
+
   get "ajax/refpt0"
   get "ajax/refpt2"
   get "ajax/refpt3"

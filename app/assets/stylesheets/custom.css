@@ -45,7 +45,7 @@ nav ul li.ss {
   list-style-type: none;
   display: inline-block;
   border-bottom: 0 solid RGB(255, 204, 66);
-  margin: 120px 3px;
+  margin: 92px 3px;
 }
 
 a {
@@ -442,9 +442,9 @@ p.pog a:hover {
 
 .avtor {
 	color: white;
-	position: absolute;
-	margin-left: 750px;
+	text-align: right;
 	margin-top: 5px;
+	padding-right: 10px;
 }
 
 #srch {
@@ -529,11 +529,11 @@ h3 a:hover {
 }
 
 h1 {
-	position: absolute;
+	text-align: right;
 	color: white;
 	font-size: 1em;
-	margin-top: 10px;
-	margin-left: 318px;
+	padding-top: 10px;
+	padding-right: 10px;
 }
 
 .metrika {
