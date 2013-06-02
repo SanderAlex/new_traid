@@ -45,7 +45,7 @@ nav ul li.ss {
   list-style-type: none;
   display: inline-block;
   border-bottom: 0 solid RGB(255, 204, 66);
-  margin: 120px 3px;
+  margin: 92px 3px;
 }
 
 a {
@@ -152,11 +152,14 @@ h5 {
 
 div.tovar {
 	margin-left: -110px;
-	width: 500px;
+	width: 700px;
 }
 
-.img {
+.img_show {
 	float: left;
+	margin-right: 15px;
+	margin-bottom: 10px;
+	max-width: 700px;
 }
 
 table {
@@ -206,6 +209,7 @@ td.block {
 p#dscr {
 	width: 700px;
 	text-align: justify;
+	color: RGB(50, 50, 50);
 }
 
 .niz {
@@ -239,9 +243,9 @@ p#dscr {
 	color: orange;
 }
 
-.picture#ind {
+.picture {
+	z-index: 0;
 	white-space: nowrap;
-	background-image: url(ind.png);
 	background-size: cover;
 	position: absolute;
 	margin-top: -200px;
@@ -249,60 +253,32 @@ p#dscr {
 	width: 370px;
 }
 
+.picture#ind {
+	background-image: url(ind.png);
+}
+
 .picture#about {
-	white-space: nowrap;
 	background-image: url(about.png);
-	background-size: cover;
-	position: absolute;
-	margin-top: -225px;
-	height: 370px;
-	width: 370px;
 	opacity: 0;
 }
 
 .picture#sert {
-	white-space: nowrap;
 	background-image: url(sert.png);
-	background-size: cover;
-	position: absolute;
-	margin-top: -220px;
-	margin-left: -20px;
-	height: 370px;
-	width: 370px;
 	opacity: 0;
 }
 
 .picture#pay {
-	white-space: nowrap;
 	background-image: url(pay.png);
-	background-size: cover;
-	position: absolute;
-	margin-top: -200px;
-	height: 370px;
-	width: 370px;
 	opacity: 0;
 }
 
 .picture#cont {
-	white-space: nowrap;
 	background-image: url(cont.png);
-	background-size: cover;
-	position: absolute;
-	margin-top: -230px;
-	margin-left: -15px;
-	height: 370px;
-	width: 370px;
 	opacity: 0;
 }
 
 .picture#map {
-	white-space: nowrap;
 	background-image: url(map.png);
-	background-size: cover;
-	position: absolute;
-	margin-top: -200px;
-	height: 370px;
-	width: 370px;
 	opacity: 0;
 }
 
@@ -398,6 +374,7 @@ p.pog {
 	margin-left: -105px;
 	text-align: justify;
 	margin-right: 25px;
+	color: RGB(50, 50, 50);
 }
 
 p.pog a {
@@ -442,9 +419,9 @@ p.pog a:hover {
 
 .avtor {
 	color: white;
-	position: absolute;
-	margin-left: 750px;
+	text-align: right;
 	margin-top: 5px;
+	padding-right: 10px;
 }
 
 #srch {
@@ -473,13 +450,10 @@ p.pog a:hover {
 
 .podval {
 	width: 650px;
-	height: 50px;
-	/*background-color: RGB(130, 178, 232);*/
 	margin-top: 25px;
 	margin-bottom: 50px;
 	font-size: medium;
-	padding: 30px;
-	/*color: white;*/
+	padding: 10px;
 	text-align: center;
 	opacity: 0.7;
 	font-weight: lighter;
@@ -489,11 +463,15 @@ p.pog a:hover {
 	text-decoration: underline;
 }
 
+h2{
+	color: RGB(50, 50, 50);	
+}
+
 h2 a {
 	color: black;
 	font-weight: bold;
 	font-size: 13pt;
-	margin-left: -100px;	
+	margin-left: -100px;
 }
 
 h3 a {
@@ -520,20 +498,16 @@ h3 a:hover {
 	text-decoration: underline;
 }
 
-.picture {
-	z-index: 0;
-}
-
 .logo a {
 	z-index: 1;
 }
 
 h1 {
-	position: absolute;
+	text-align: right;
 	color: white;
 	font-size: 1em;
-	margin-top: 10px;
-	margin-left: 318px;
+	padding-top: 10px;
+	padding-right: 10px;
 }
 
 .metrika {
@@ -552,4 +526,57 @@ p.adminka a {
 
 p.adminka a:hover {
 	color: orange;
+}
+
+#picture-img-left {
+	margin-right: 15px;
+	margin-left: 0;
+	margin-top: 15px;
+	margin-bottom: 15px;	
+	max-width: 685px;
+	float: left;
+}
+
+#picture-img-center {
+	display:block;
+	margin: 15px auto 15px;
+	max-width: 700px;
+}
+
+#picture-img-right {
+	margin-right: 0;
+	margin-left: 15px;
+	margin-top: 15px;
+	margin-bottom: 15px;
+	max-width: 685px;
+	float: right;
+}
+
+p#dscr a {
+	color: blue;
+	text-decoration: underline;
+}
+
+p#dscr a:hover {
+	color: RGB(255, 204, 66);
+	text-decoration: underline;
+}
+
+#preview_image {
+	max-width: 150px;
+	max-height: 100px;
+}
+
+#position_radio {
+	float: right;
+	margin-right: 15px;
+}
+
+.avatar_full_hd {
+	width: 50%;
+	margin-left: 25%;
+}
+
+#avatar_preview {
+	max-width: 402px;
 }

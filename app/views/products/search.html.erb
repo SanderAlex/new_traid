@@ -1,93 +1,10 @@
 <script>
   		$(function() {
 
-        $(".ss").children("a").mouseover(function(){
-          $(this).parent(".ss").animate({
-            borderWidth: "5px"}, 300 );
-          $(this).parent(".ss").dequeue('fx');
-          });
-        $(".ss").children("a").mouseout(function(){
-          $(this).parent(".ss").animate({
-            borderWidth: "0"}, 290 );
-        $(this).parent(".ss").dequeue('fx');
-        });
-
-        $("#about").mouseover(function(){
-          $(".picture#ind").animate({opacity:0}, 600);
-          $(".picture#about").animate({opacity:1.0}, 600);
-          $(".picture").dequeue('fx');
-        });
-
-
-        $("#about").mouseout(function(){
-          $(".picture#ind").animate({opacity:1.0}, 590);
-          $(".picture#about").animate({opacity:0}, 590);
-          $(".picture").dequeue('fx');
-        });
-
-        $("#sert").mouseover(function(){
-          $(".picture#ind").animate({opacity:0}, 600);
-          $(".picture#sert").animate({opacity:1.0}, 600);
-          $(".picture").dequeue('fx');
-        });
-
-
-        $("#sert").mouseout(function(){
-          $(".picture#ind").animate({opacity:1.0}, 590);
-          $(".picture#sert").animate({opacity:0}, 590);
-          $(".picture").dequeue('fx');
-        });
-
-
-        $("#pay").mouseover(function(){
-          $(".picture#ind").animate({opacity:0}, 600);
-          $(".picture#pay").animate({opacity:1.0}, 600);
-          $(".picture").dequeue('fx');
-        });
-
-
-        $("#pay").mouseout(function(){
-          $(".picture#ind").animate({opacity:1.0}, 590);
-          $(".picture#pay").animate({opacity:0}, 590);
-          $(".picture").dequeue('fx');
-        });
-
-
-        $("#cont").mouseover(function(){
-          $(".picture#ind").animate({opacity:0}, 600);
-          $(".picture#cont").animate({opacity:1.0}, 600);
-          $(".picture").dequeue('fx');
-        });
-
-
-        $("#cont").mouseout(function(){
-          $(".picture#ind").animate({opacity:1.0}, 590);
-          $(".picture#cont").animate({opacity:0}, 590);
-          $(".picture").dequeue('fx');
-        });
-
-
-        $("#map").mouseover(function(){
-          $(".picture#ind").animate({opacity:0}, 600);
-          $(".picture#map").animate({opacity:1.0}, 600);
-          $(".picture").dequeue('fx');
-        });
-
-
-        $("#map").mouseout(function(){
-          $(".picture#ind").animate({opacity:1.0}, 590);
-          $(".picture#map").animate({opacity:0}, 590);
-          $(".picture").dequeue('fx');
-        });
-
-
-  		$(".block").css({ backgroundColor: "RGB(255, 255, 255)" });
-
   		$("td").children("a").mouseover(function(){
           $(this).parent("td").animate({ backgroundColor: "RGB(199, 199, 199)"}, 300 );
           $(this).parent("td").dequeue('fx');
           });
-
 
          $("td").children("a").mouseout(function(){
           $(this).parent("td").animate({ backgroundColor: "RGB(255, 255, 255)"}, 290 );
@@ -98,13 +15,13 @@
 </script>
 
 <p class="seo">Поиск по "<%= params[:search] %>"</p>
-<div class="tovar">
+<div class="tovar" id="tov">
   <div class="limit">
 	<table>
 		<% @products.in_groups_of(3, false) do |product_group| %>
 	<tr>
         <% product_group.each do |product| %>
-        <td class="block">
+        <td class="block" style="background-color: white">
             <%= link_to product do %>
             <%= image_tag("#{ product.avatar.url }", :size => "192x192", :alt => "#{product.name}.jpg") %>
             <% end %><br>

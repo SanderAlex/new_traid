@@ -1,18 +1,8 @@
 class ProductsController < ApplicationController
 
-http_basic_authenticate_with :name => "admin", :password => "admin", :except => [:show, :search]
+http_basic_authenticate_with :name => "admin", :password => "qosmiox300", :except => [:show, :search]
 
 	def index
-		@products = Product.all
-		@product = Product.find_by_id("0")
-	end
-
-	def bd
-		@products = Product.all
-		@product = Product.find_by_id("0")
-	end
-
-	def pg
 		@products = Product.all
 		@product = Product.find_by_id("0")
 	end
@@ -20,12 +10,14 @@ http_basic_authenticate_with :name => "admin", :password => "admin", :except => 
 	def show
 		@title = Product.find(params[:id]).name
 		@product = Product.find(params[:id])
+  		@page_id = "ind"
 	end
 
 	def search
 		@title = "Поиск"
   		@products = Product.search(params[:search])
   		@product = Product.find_by_id("0")
+  		@page_id = "ind"
 	end
 
 	def new
@@ -34,6 +26,7 @@ http_basic_authenticate_with :name => "admin", :password => "admin", :except => 
 
 	def edit
     	@product = Product.find(params[:id])
+  		@page_id = "ind"
     end
 
 	def create

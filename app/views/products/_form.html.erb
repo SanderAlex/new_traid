@@ -1,4 +1,5 @@
 <%= form_for(@product) do |f| %>
+
 <% if @product.errors.any? %>
 <div id="errorExplanation">
 <h2><%= pluralize(@product.errors.count, "error") %> prohibited
@@ -10,42 +11,146 @@ this product from being saved:</h2>
 </ul>
 </div>
 <% end %>
+
+<%= f.file_field :avatar, :id => "avatar_input", :accept => "image/jpeg,image/png,image/gif" %>
+<br><br>
+
+<%= image_tag (@product.avatar.url), :id => "avatar_preview" if @product.avatar? %>
+
 <div class="field">
 <%= f.label :name %><br />
 <%= f.text_field :name %>
 </div>
+
 <div class="field">
-<%= f.label :description %><br />
-<%= f.text_area :description %>
+<%= f.label :description %><br>
+<%= f.text_area :description, :id => "description" %>
 </div>
+<input type="button" value=" Жирный " id="bold">
+<input type="button" value=" Курсив " id="italic">
+<input type="button" value=" Подчеркнутый " id="underline">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<input type="button" value=" Ссылка " id="url_paste">
+<input type="button" value=" Изображение " data-remote="true" id="image_paste">
+<br><br>
+
 <div class="field">
-<%= f.label :section %><br />
-<%= f.text_field :section %>
+<%= f.label :section, "Категория" %>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<%= f.select :section, "<option value='1'>Модульные электрические котельные</option><option value='2'>Щиты управления котельными</option><option value='3'>Электрические котлы</option><option value='4'>Щиты управления котлами</option><option value='5'>Прочая продукция</option>".html_safe %>
+<br>
+<%= f.label :subsection, "Подкатегория", :id => "label_subsection" %>&nbsp;&nbsp;
+<%= f.select :subsection, "<option value='a'>Встраиваемые отопительные модули</option><option value='b'>Модули в блок-контейнере</option><option style='display:none;' value='c'>none</option>".html_safe %>
 </div>
-<div class="field">
-<%= f.label :subsection %><br />
-<%= f.text_field :subsection %>
-</div>
 
-Avatar<br>
-<%= f.file_field :avatar %><br>
-<%= image_tag (@product.avatar.url) if @product.avatar? %>
-	<br>	<br>
-
-Picture<br>
-<%= f.file_field :picture %><br>
-<%= image_tag (@product.picture.url) if @product.picture? %>
-	<br>	<br>
-
-Picture1<br>
-<%= f.file_field :picture1 %><br>
-<%= image_tag (@product.picture1.url) if @product.picture1? %>
-	<br>	<br>	
-
-
+<hr>
 
 <div class="actions">
-	<br>
 <%= f.submit %>
 </div>
+
 <% end %>
+
+<br>
+
+<script>
+
+$(function() {
+
+	$("#product_section").val("<%= @product.section %>");
+	$("#product_subsection").val("<%= @product.subsection %>");
+	
+	setSubSection();
+
+	$("#bold").click(function(){
+		$("#description").pasteTags("<b>", "</b>");
+	});
+
+	$("#italic").click(function(){
+		$("#description").pasteTags("<i>", "</i>");
+	});	
+
+	$("#underline").click(function(){
+		$("#description").pasteTags("<u>", "</u>");
+	});
+
+	$("#url_paste").click(function(){
+		$.msg({ 
+  			bgPath : '/dev-assets/',
+  			content : '<label>URL </label><input type="text" id="url_input" value="http://"><br><label>Text</label><input type="text" id="text_input"><br><input type="button" value=" Ok " id="url_acept"><input type="button" value=" Отмена " id="url_cancel">',
+  			autoUnblock : false,
+  			clickUnblock : false
+		});
+	$("#url_acept").click(function() {
+		var url_value = $("#url_input").val();
+		var text_value = $("#text_input").val();
+		$("#description").pasteUrl(url_value, text_value);
+		$.msg( 'unblock');
+	})
+	$("#url_cancel").click(function() {
+		$.msg( 'unblock');
+	})
+	});
+
+	$("#image_paste").click(function() {
+		$.ajax("/pictures/upload")
+		$.msg({ 
+			msgID : 1,
+  			bgPath : '/dev-assets/',
+  			content : '<div id="image_paste_msgbox"></div>',
+  			autoUnblock : false,
+  			clickUnblock : false
+		});
+	});
+
+	$("#product_section").change(function() {
+		setSubSection();
+	});
+
+	function setSubSection() {
+			
+		var product_section = $("#product_section").val();
+		var product_subsection = $("#product_subsection").val();
+			if (product_section != 1) {
+				$("#product_subsection").hide();
+				$("#label_subsection").hide();
+				$("#product_subsection").val("c");
+			}
+			else {
+				$("#product_subsection").show();
+				$("#label_subsection").show();
+				if (product_subsection = "c") {
+					$("#product_subsection").val("a");
+				}
+			}
+		};
+
+	(function($) {
+
+		$.fn.pasteTags = function(open, close) {
+			var textarea = $(this);
+			var value = textarea.val();
+			var start = textarea[0].selectionStart;
+      		var end = textarea[0].selectionEnd;
+      		textarea.val(
+      			value.substr(0, start) + 
+      			open + value.substring(start, end) + close + 
+      			value.substring(end, value.length)
+      			);
+		};
+
+		$.fn.pasteUrl = function(url, text) {
+			var textarea = $(this);
+			var value = textarea.val();
+			var start = textarea[0].selectionStart;
+			textarea.val(value.substr(0, start) + "<a href='" + url + "'>" + text + "</a>" + value.substring(start, value.length));
+		}
+
+		$.fn.pasteImg = function(img, position) {
+			var textarea = $(this);
+			var value = textarea.val();
+			var start = textarea[0].selectionStart;
+			textarea.val(value.substr(0, start) + "<img src='" + img + "' id='" + position + "'>" + value.substring(start, value.length));
+		}
+
+	})(jQuery);
+});
+</script>

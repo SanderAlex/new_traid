@@ -1,27 +1,20 @@
-<%= render 'layouts/scr' %>
-
 <p class="seo"><%= @product.name %></p>
 
 <div class="tovar">
-<table class="tp">
-	<td class="nobord">
-<% if @product.avatar? then %>
-<%= render 'products/av' %>
-<% end %>
-	</td>
-	<td>
-<% if @product.picture? then %>
-<%= render 'products/pc' %>
-<% end %>
-	</td>
-	<td>
-<% if @product.picture1? then %>
-<%= render 'products/pc1' %>
-<% end %>
-	</td>
-</table>
-<p id="dscr"><%= raw(nl2br(h(@product.description))) %></p>
 
+<% if @product.avatar? then %>
+	<div class="img">
+	<%= image_tag("#{ @product.avatar.url }", :alt => "#{ @product.name }.jpg", :class => "img_show") %>
+	</div>
+<% end %>
+
+<% if @product.description? %>
+<p id="dscr">
+	<%= raw(nl2br(h(@product.description.html_safe))) %>
+</p>
+<% end %>
+
+<hr>
 <div class="podval">Всю информацию можете уточнить то телефону <br> или написав нам письмо на <a href="mailto:info@titan-traid.ru" style="color: RGB(255, 204, 66); font-weight: bold;">info@titan-traid.ru</a></div>
 
 </div>

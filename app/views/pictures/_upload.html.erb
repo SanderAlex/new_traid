@@ -1,0 +1,45 @@
+<%= form_tag "create_assets", :remote => true, :multipart => true, :id => "upload_form" do %>
+	<%= file_field_tag :uploaded_data, :accept => "image/jpeg,image/png,image/gif" %><br><br>
+<% end %>
+<img src="" id="preview_image">
+<div id="position_radio">
+<p><input type="radio" name="position" value="picture-img-left" checked="true">Слева</p>
+<p><input type="radio" name="position" value="picture-img-center">По-центру<p>
+<p><input type="radio" name="position" value="picture-img-right">Справа<p>
+</div>
+<hr>
+<input type="button" value=" Готово " id="image_close">
+<script>
+	$(function() {
+
+		var image_path = null;
+
+		$("#upload_form input").change(function() {
+			$(this).closest('form').ajaxSubmit({
+  				beforeSubmit: function(a,f,o) {
+   					o.dataType = 'json';
+  				},
+  				complete: function(XMLHttpRequest, textStatus) {
+ 					$('#preview_image').attr('src', XMLHttpRequest.responseText);
+  					image_path = XMLHttpRequest.responseText;
+  				}
+			});
+		});
+
+		$("#image_close").click(function() {
+
+			if (image_path != null) {
+
+				image_position = $("input:radio:checked").val();
+				$("#description").pasteImg(image_path, image_position);
+				$.msg( 'unblock', 0, 1 );
+				image_path = null;
+			}
+
+			else {
+				$.msg( 'unblock', 0, 1 );				
+			}
+		})
+
+	});
+</script>
