@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <%= image_tag("logo.png", :alt => "Титан-трейд", :class => "logo") %>
 <div class="im"></div>
 <nav class="menu">
@@ -10,6 +11,20 @@
     <li class="ss" id="map"><%= link_to "Карта сайта", map_path, :id => 'sm' -%></li>
   </ul>
 </nav>
+=======
+    <%= image_tag("logo.png", :alt => "Титан-трейд", :class => "logo") %>
+      <div class="im"></div>
+      <nav class="menu">
+        <h1><strong>Производство и поставка блочно модульных электрокотельных и отопительного оборудования</strong></h1>
+        <ul>
+          <li class="ss" id="about"><%= link_to "О компании", root_path, :id => 'ab' -%></li>
+          <li class="ss" id="sert"><%= link_to "Документация", doc_path, :id => 'sr' -%></li>
+          <li class="ss" id="pay"><%= link_to "Доставка и оплата", payment_path, :id => 'py' -%></li>
+          <li class="ss" id="cont"><%= link_to "Контакты", contact_path, :id => 'cn' -%></li>
+          <li class="ss" id="map"><%= link_to "Карта сайта", map_path, :id => 'sm' -%></li>
+        </ul>
+      </nav>
+>>>>>>> 1a4f60eab95d6c04a952cc39af403b28f76092df
 
 <div class="search">
 <%= form_tag search_path :method => 'get' do %>

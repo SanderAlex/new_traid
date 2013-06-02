@@ -75,6 +75,7 @@
 
 <nav class="list1">
   <ul class="list">
+<<<<<<< HEAD
     <li class="list" id="1">
       <%= link_to "Модульные электрические котельные", ajax_refpt_path(:title => "Модульные электрические котельные"), :remote => true %>
     </li>
@@ -112,6 +113,30 @@
     <li class="list" id="2">
       <%= link_to "Щиты управления котельными", ajax_refpt2_path(:prods => 2, :title => "Щиты управления котельными"), :class => "dub", :remote => true %>
     </li>
+=======
+    <li class="list" id="1"><%= link_to "Модульные электрические котельные", ajax_refpt0_path, :remote => true, :class => 'pjax' %></li>
+
+            <section class="n" id="1">
+                <h5 id="a"><%= link_to "Встраиваемые отопительные модули".html_safe, ajax_refpt_path, :remote => true, :class => 'pjax'  %></h5>
+                  <section class="n" id="a">
+                  <% list %>
+                  <% @products.each do |product| %>
+                  <h5><%= link_to product.name, product, :class => product.id %></h5>
+                  <% end %>
+              </section>
+
+              <h5 id="b"><%= link_to "Модули в блок-контейнере", ajax_refpt1_path, :remote => true, :class => 'pjax'  %></h5>
+              <section class="n" id="b">
+                  <% list1 %>
+                  <% @products.each do |product| %>
+                  <h5><%= link_to product.name, product, :class => product.id %></h5>
+                  <% end %>
+            </section>
+
+          </section>
+
+    <li class="list" id="2"><%= link_to "Щиты управления котельными".html_safe, ajax_refpt2_path, :class => "dub", :remote => true, :class => 'pjax'  %></li>
+>>>>>>> 1a4f60eab95d6c04a952cc39af403b28f76092df
       <section class="n" id="2">
         <% lists %>
         <% @products = Product.find_all_by_section(2) %>
@@ -122,9 +147,13 @@
         <% end %>
       </section> 
 
+<<<<<<< HEAD
     <li class="list" id="3">
       <%= link_to "Электрические котлы", ajax_refpt2_path(:prods => 3, :title => "Электрические котлы"), :remote => true %>
     </li>
+=======
+    <li class="list" id="3"><%= link_to "Электрические котлы", ajax_refpt3_path, :remote => true, :class => 'pjax'  %></li>
+>>>>>>> 1a4f60eab95d6c04a952cc39af403b28f76092df
       <section class="n" id="3">
         <% lists %>
         <% @products = Product.find_all_by_section(3) %>
@@ -135,9 +164,13 @@
         <% end %>
       </section>
 
+<<<<<<< HEAD
     <li class="list" id="4">
       <%= link_to "Щиты управления котлами", ajax_refpt2_path(:prods => 4, :title => "Щиты управления котлами"), :remote => true %>
     </li>
+=======
+    <li class="list" id="4"><%= link_to "Щиты управления котлами".html_safe, ajax_refpt4_path, :remote => true, :class => 'pjax'  %></li>
+>>>>>>> 1a4f60eab95d6c04a952cc39af403b28f76092df
       <section class="n" id="4">
         <% lists %>
         <% @products = Product.find_all_by_section(4) %>
