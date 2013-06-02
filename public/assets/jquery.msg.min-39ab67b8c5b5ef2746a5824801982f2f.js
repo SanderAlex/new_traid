@@ -1,0 +1,10 @@
+/* Copyright 2011, Ben Lin (http://dreamerslab.com/)
+* Licensed under the MIT License (LICENSE.txt).
+*
+* Version: 1.0.7
+*
+* Requires: 
+* jQuery 1.3.0+, 
+* jQuery Center plugin 1.0.0+ https://github.com/dreamerslab/jquery.center
+*/
+(function(e,t){var n={},r=0,i,s=[function(){}];e.msg=function(){var o,u,l,h,p,v,m;return l=[].shift.call(arguments),h={}.toString.call(l),p=e.extend({afterBlock:function(){},autoUnblock:!0,center:{topPercentage:.4},css:{},clickUnblock:!0,content:"Please wait...",fadeIn:200,fadeOut:300,bgPath:"",klass:"black-on-white",method:"appendTo",target:"body",timeOut:2400,z:1e3},n),h==="[object Object]"&&e.extend(p,l),v={unblock:function(){o=e("#jquery-msg-overlay").fadeOut(p.fadeOut,function(){s[p.msgID](o),o.remove()}),clearTimeout(i)}},m={unblock:function(e,t){var n=e===undefined?0:e;p.msgID=t===undefined?r:t,setTimeout(function(){v.unblock()},n)},replace:function(t){if({}.toString.call(t)!=="[object String]")throw"$.msg('replace'); error: second argument has to be a string";e("#jquery-msg-content").empty().html(t).center(p.center)},overwriteGlobal:function(e,t){n[e]=t}},r--,p.msgID=p.msgID===undefined?r:p.msgID,s[p.msgID]=p.beforeUnblock===undefined?function(){}:p.beforeUnblock,h==="[object String]"?m[l].apply(m,arguments):(o=e('<div id="jquery-msg-overlay" class="'+p.klass+'" style="position:absolute; z-index:'+p.z+"; top:0px; right:0px; left:0px; height:"+e(t).height()+'px;"><img src="'+p.bgPath+'blank.gif" id="jquery-msg-bg" style="width: 100%; height: 100%; top: 0px; left: 0px;"/><div id="jquery-msg-content" class="jquery-msg-content" style="position:absolute;">'+p.content+"</div></div>"),o[p.method](p.target),u=e("#jquery-msg-content").center(p.center).css(p.css).hide(),o.hide().fadeIn(p.fadeIn,function(){u.fadeIn("fast").children().andSelf().bind("click",function(e){e.stopPropagation()}),p.afterBlock.call(m,o),p.clickUnblock&&o.bind("click",function(e){e.stopPropagation(),v.unblock()}),p.autoUnblock&&(i=setTimeout(v.unblock,p.timeOut))})),this}})(jQuery,document);

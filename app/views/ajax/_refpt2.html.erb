@@ -1,7 +1,11 @@
 <%= render 'ajax/script' %>
+    <% lists %>
+<p class="seo">
+    <%= @title %>
+</p>
+<div class="tovar" id="tov">
 <div class="limit">
 	<table>
-		<% refresh2 %>
 		<% @products.in_groups_of(3, false) do |product_group| %>
 	<tr>
         <% product_group.each do |product| %>
@@ -15,4 +19,5 @@
     </tr>
         <% end %>
  	</table>
+</div>
 </div>

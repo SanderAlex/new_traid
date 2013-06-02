@@ -1,7 +1,21 @@
+<<<<<<< HEAD
+<%= image_tag("logo.png", :alt => "Титан-трейд", :class => "logo") %>
+<div class="im"></div>
+<nav class="menu">
+<h1><strong>Производство и поставка блочно модульных электрокотельных и отопительного оборудования</strong></h1>
+  <ul>
+    <li class="ss" id="about"><%= link_to "О компании", root_path, :id => 'ab' -%></li>
+    <li class="ss" id="sert"><%= link_to "Документация", doc_path, :id => 'sr' -%></li>
+    <li class="ss" id="pay"><%= link_to "Доставка и оплата", payment_path, :id => 'py' -%></li>
+    <li class="ss" id="cont"><%= link_to "Контакты", contact_path, :id => 'cn' -%></li>
+    <li class="ss" id="map"><%= link_to "Карта сайта", map_path, :id => 'sm' -%></li>
+  </ul>
+</nav>
+=======
     <%= image_tag("logo.png", :alt => "Титан-трейд", :class => "logo") %>
       <div class="im"></div>
       <nav class="menu">
-        <h1><strong>Водонагреватели, электрические блочные и модульные котельные - производство и поставка в любой регион</strong></h1>
+        <h1><strong>Производство и поставка блочно модульных электрокотельных и отопительного оборудования</strong></h1>
         <ul>
           <li class="ss" id="about"><%= link_to "О компании", root_path, :id => 'ab' -%></li>
           <li class="ss" id="sert"><%= link_to "Документация", doc_path, :id => 'sr' -%></li>
@@ -10,14 +24,80 @@
           <li class="ss" id="map"><%= link_to "Карта сайта", map_path, :id => 'sm' -%></li>
         </ul>
       </nav>
+>>>>>>> 1a4f60eab95d6c04a952cc39af403b28f76092df
 
 <div class="search">
 <%= form_tag search_path :method => 'get' do %>
-    <%= text_field_tag :search, params[:search], :id => 'search_field'  %>
+    <%= text_field_tag :search, params[:search], :id => 'search_field' %>
 <% end %>
 <%= image_tag("srch.png", :size => "25x20", :alt => "Титан-трейд", :id => 'srch') %>
 </div>
 
-    </header>
+<script>
+  
+  var color_prod_menu = 0;
+  var pg_id = "<%= @page_id %>";
+
+  (function (d, w, c) {
+    (w[c] = w[c] || []).push(function() {
+        try {
+            w.yaCounter19435087 = new Ya.Metrika({id:19435087,
+                    clickmap:true,
+                    trackLinks:true,
+                    accurateTrackBounce:true});
+        } catch(e) { }
+    });
+
+    var n = d.getElementsByTagName("script")[0],
+        s = d.createElement("script"),
+        f = function () { n.parentNode.insertBefore(s, n); };
+    s.type = "text/javascript";
+    s.async = true;
+    s.src = (d.location.protocol == "https:" ? "https:" : "http:") + "//mc.yandex.ru/metrika/watch.js";
+
+    if (w.opera == "[object Opera]") {
+        d.addEventListener("DOMContentLoaded", f, false);
+    } else { f(); }
+  })(document, window, "yandex_metrika_callbacks");
+
+    $(function(){
+
+
+      $(".ss#" + pg_id).animate({
+          borderWidth: "5px"}, 300 );
+      $(".ss#" + pg_id).children("a").css("color", "RGB(255, 204, 66)");
+      $(".picture#<%= @page_id %>").css('opacity', '1.0');
+      $(".picture").not(".picture#<%= @page_id %>").css('opacity', '0');
+
+
+      $(".ss a").not(".ss#" + pg_id).mouseover(function() {
+ 
+        $(this).parent(".ss").animate({
+          borderWidth: "5px"}, 300 ).dequeue('fx');
+        $(this).css("color", "RGB(255, 204, 66)");
+
+        var picId = $(this).parent().attr('id');
+        $(".picture#" + picId).animate({opacity:1.0}, 600).dequeue('fx');
+        $(".picture").not(".picture#" + picId).animate({opacity:0}, 600).dequeue('fx');
+      });
+
+
+      $(".ss").children("a").mouseout(function(){
+
+          $(this).not(".ss#" + pg_id).parent(".ss").animate({
+            borderWidth: "0"}, 290 ).dequeue('fx');
+          $(".ss#" + pg_id).animate({
+            borderWidth: "5px"}, 300 );
+          $(this).not(".ss#" + pg_id + " a").css("color", "white");
+
+          $(".picture#" + pg_id).animate({opacity:1.0}, 600).dequeue('fx');
+          $(".picture").not(".picture#" + pg_id).animate({opacity:0}, 600).dequeue('fx');
+      });
+
+    });
+
+</script>
+
+</header>
 
 

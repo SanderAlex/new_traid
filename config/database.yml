@@ -3,14 +3,24 @@
 #
 #   Ensure the SQLite 3 gem is defined in your Gemfile
 #   gem 'sqlite3'
+
+production:
+  adapter: mysql2
+  database: spiritd_titan-31
+  username: spiritd_titan-31
+  password: fapHPDOKU
+  host: mysql5.locum.ru
+  encoding: utf8
+  reconnect: true
+
 development:
   adapter: mysql2
-  database: app_development
+  database: app_development 
   username: root
   password: root
   host: 127.0.0.1
-  pool: 5
-  timeout: 5000
+  port: 3306
+  encoding: utf8
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
@@ -21,14 +31,5 @@ test:
   username: root
   password: root
   host: 127.0.0.1
-  pool: 5
-  timeout: 5000
-
-production:
-  adapter: mysql2
-  database: app_production
-  username: root
-  password: root
-  host: localhost
-  pool: 5
-  timeout: 5000
+  port: 3306
+  encoding: utf8

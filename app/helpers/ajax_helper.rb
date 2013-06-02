@@ -1,8 +1,10 @@
 module AjaxHelper
+<<<<<<< HEAD
+=======
 
 	def refresh0
 		@products = Product.find_all_by_section("1")
-		@title = "Электрокотельные"
+		@title = "Модульные электрические котельные"
 	end
 
 	def refresh
@@ -17,21 +19,22 @@ module AjaxHelper
 
 	def refresh2
 		@products = Product.find_all_by_section("2")
-		@title = "Пульты управления электрокотельными"
+		@title = "Щиты управления котельными"
 	end
 
 	def refresh3
 		@products = Product.find_all_by_section("3")
-		@title = "Электроводонагреватели"
+		@title = "Электрические котлы"
 	end
 
 	def refresh4
 		@products = Product.find_all_by_section("4")
-		@title = "Пульты управления электроводонагревателями"
+		@title = "Щиты управления котлами"
 	end
 
 	def refresh5
 		@products = Product.find_all_by_section("5")
 		@title = "Прочая продукция"
 	end
+>>>>>>> 1a4f60eab95d6c04a952cc39af403b28f76092df
 end

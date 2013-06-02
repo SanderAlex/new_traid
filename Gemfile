@@ -2,7 +2,7 @@ source 'https://rubygems.org'
 
 gem 'rails', '3.2.1'
 
-
+gem 'rake', '10.0.4'
 # gem 'mysql2', '< 0.3'
 
 # Bundle edge Rails instead:
@@ -10,7 +10,7 @@ gem 'rails', '3.2.1'
 
  gem 'sqlite3', :group => [:development, :test]
 group :production do
-  gem 'unicorn', '~> 3.6.2', :require => nil
+ # gem 'unicorn', '~> 3.6.2', :require => nil
   gem 'thin'
   gem 'pg'
 end
@@ -55,8 +55,6 @@ gem 'net-ldap'
 
 gem "paperclip", "~> 2.0"
       
-gem 'comfortable_mexican_sofa'
-
 gem 'carrierwave'
 
 # To use ActiveModel has_secure_password
