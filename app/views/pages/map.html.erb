@@ -1,18 +1,13 @@
 <p class="seo">Карта сайта</p>
 <p class="pog">
   <br>
-<<<<<<< HEAD
+
   <h2 id="1"><%= link_to "Модульные электрические котельные", ajax_refpt_path(:title => "Модульные электрические котельные"), :remote => true %></h2>
                 <h3 id="a"><%= link_to "Встраиваемые отопительные модули", ajax_refpt2_path(:prods => "a"), :remote => true %></h3>
         <% lists %>
         <% @products = Product.find_all_by_section_and_subsection("1", "a") %> 
                  <% @products.each do |product| %>
-=======
-  <h2 id="q"><%= link_to "Модульные электрические котельные", ajax_refpt0_path, :remote => true %></h2>
-                <h3 id="y"><%= link_to "Встраиваемые отопительные модули".html_safe, ajax_refpt_path, :remote => true %></h3>
-                  <% list %>
-                  <% @products.each do |product| %>
->>>>>>> 1a4f60eab95d6c04a952cc39af403b28f76092df
+
                   <h4><%= link_to product.name, product, :class => product.id %></h4>
                   <% end %>
 
@@ -24,38 +19,29 @@
                   <h4><%= link_to product.name, product, :class => product.id %></h4>
                   <% end %>
 
-<<<<<<< HEAD
+
   <h2 id="2"><%= link_to "Щиты управления котельными", ajax_refpt2_path(:prods => 2, :title => "Щиты управления котельными"), :class => "dub", :remote => true %></h2>
         <% lists %>
         <% @products = Product.find_all_by_section(2) %>
-=======
-  <h2 id="w"><%= link_to "Щиты управления котельными".html_safe, ajax_refpt2_path, :class => "dub", :remote => true %></h2>
-                  <% list2 %>
->>>>>>> 1a4f60eab95d6c04a952cc39af403b28f76092df
+
                   <% @products.each do |product| %>
                   <h4><%= link_to product.name, product, :class => product.id %></h4>
                   <% end %>
 
-<<<<<<< HEAD
+
     <h2 id="3"><%= link_to "Электрические котлы", ajax_refpt2_path(:prods => 3, :title => "Электрические котлы"), :remote => true %></h2>
         <% lists %>
         <% @products = Product.find_all_by_section(3) %>
-=======
-    <h2 id="e"><%= link_to "Электрические котлы", ajax_refpt3_path, :remote => true %></h2>
-                  <% list3 %>
->>>>>>> 1a4f60eab95d6c04a952cc39af403b28f76092df
+
                   <% @products.each do |product| %>
                   <h4><%= link_to product.name, product, :class => product.id %></h4>
                   <% end %>
 
-<<<<<<< HEAD
+
     <h2 id="4"><%= link_to "Щиты управления котлами", ajax_refpt2_path(:prods => 4, :title => "Щиты управления котлами"), :remote => true %></h2>
         <% lists %>
         <% @products = Product.find_all_by_section(4) %>
-=======
-    <h2 id="r"><%= link_to "Щиты управления котлами".html_safe, ajax_refpt4_path, :remote => true %></h2>
-                  <% list4 %>
->>>>>>> 1a4f60eab95d6c04a952cc39af403b28f76092df
+
                   <% @products.each do |product| %>
                   <h4><%= link_to product.name, product, :class => product.id %></h4>
                   <% end %>

@@ -44,7 +44,8 @@ this product from being saved:</h2>
 <hr>
 
 <div class="actions">
-<%= f.submit %>
+<%= f.submit :id => "submit_button", :disabled => "disabled" %>
+<span id="validation">Необходимо заполнить поле "Name"</span>
 </div>
 
 <% end %>
@@ -57,8 +58,8 @@ $(function() {
 
 	$("#product_section").val("<%= @product.section %>");
 	$("#product_subsection").val("<%= @product.subsection %>");
-	
 	setSubSection();
+	nameValidation();
 
 	$("#bold").click(function(){
 		$("#description").pasteTags("<b>", "</b>");
@@ -105,23 +106,38 @@ $(function() {
 		setSubSection();
 	});
 
+	$("#product_name").keyup(function() {
+		nameValidation();
+	})
+
 	function setSubSection() {
 			
 		var product_section = $("#product_section").val();
 		var product_subsection = $("#product_subsection").val();
-			if (product_section != 1) {
+			if (product_section == 1) {
+				$("#product_subsection").show();
+				$("#label_subsection").show();
+				if (product_subsection == "c") {
+					$("#product_subsection").val("a");
+				}
+			}
+			else {
 				$("#product_subsection").hide();
 				$("#label_subsection").hide();
 				$("#product_subsection").val("c");
 			}
-			else {
-				$("#product_subsection").show();
-				$("#label_subsection").show();
-				if (product_subsection = "c") {
-					$("#product_subsection").val("a");
-				}
-			}
 		};
+
+	function nameValidation() {
+		if ($("#product_name").val().length == 0) {
+			$("#submit_button").attr('disabled', 'disabled');
+			$("#validation").show();	
+		}
+		else {
+			$("#submit_button").removeAttr('disabled');
+			$("#validation").hide();		
+		}
+	}
 
 	(function($) {
 

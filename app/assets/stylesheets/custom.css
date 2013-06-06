@@ -159,7 +159,7 @@ div.tovar {
 	float: left;
 	margin-right: 15px;
 	margin-bottom: 10px;
-	max-width: 700px;
+	max-width: 350px;
 }
 
 table {
@@ -572,9 +572,9 @@ p#dscr a:hover {
 	margin-right: 15px;
 }
 
-.avatar_full_hd {
-	width: 50%;
-	margin-left: 25%;
+#avatar_full_hd {
+	max-width: 980px;
+	max-height: 50%;
 }
 
 #avatar_preview {

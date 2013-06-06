@@ -13,14 +13,6 @@ TitanTraid::Application.routes.draw do
   match '/Elektricheskie_kotly_EPZ-25i6_EPZ-50i2_EPZ-100', :to => redirect('/Elektricheskie_kotly_EPZ-25i6_EPZ-50i2_EPZ-100.pdf')
   match '/Elektrichesky_kotel_EPZ-25i2', :to => redirect('/Elektrichesky_kotel_EPZ-25i2.pdf')
 
-<<<<<<< HEAD
-=======
-  get "ajax/refpt0"
-  get "ajax/refpt2"
-  get "ajax/refpt3"
-  get "ajax/refpt4"
-  get "ajax/refpt5"
->>>>>>> 1a4f60eab95d6c04a952cc39af403b28f76092df
   get "ajax/refpt"
   get "ajax/refpt2"
   get "pictures/upload"
@@ -41,6 +33,7 @@ TitanTraid::Application.routes.draw do
   match '/search', :to => 'products#search'
 
   match "/products/:id/create_assets", :to => 'pictures#create_assets'
+  match "/create_assets", :to => 'pictures#create_assets'
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

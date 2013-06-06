@@ -18,3 +18,26 @@
 <div class="podval">Всю информацию можете уточнить то телефону <br> или написав нам письмо на <a href="mailto:info@titan-traid.ru" style="color: RGB(255, 204, 66); font-weight: bold;">info@titan-traid.ru</a></div>
 
 </div>
+
+<script>
+
+$(function() {
+
+	$(".img_show").mouseover(function() {
+        $(this).css("cursor", "pointer");		
+	});
+
+	$(".img_show").click(function() {
+		$.msg({ 
+			msgID : 2,
+  			bgPath : '/dev-assets/',
+  			content : '<img src="<%= @product.avatar %>" id="avatar_full_hd">',
+  			autoUnblock : false,
+		});
+		$("#avatar_full_hd").click(function() {
+			$.msg( 'unblock', 0, 2 );			
+		})		
+	});
+});
+
+</script>

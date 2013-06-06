@@ -5,6 +5,7 @@ http_basic_authenticate_with :name => "admin", :password => "qosmiox300", :excep
 	def index
 		@products = Product.all
 		@product = Product.find_by_id("0")
+  		@page_id = "ind"
 	end
 
 	def show
@@ -22,6 +23,7 @@ http_basic_authenticate_with :name => "admin", :password => "qosmiox300", :excep
 
 	def new
 		@product = Product.new
+  		@page_id = "ind"
 	end
 
 	def edit
