@@ -75,7 +75,6 @@ $(function() {
 
 	$("#url_paste").click(function(){
 		$.msg({ 
-  			bgPath : '/dev-assets/',
   			content : '<label>URL </label><input type="text" id="url_input" value="http://"><br><label>Text</label><input type="text" id="text_input"><br><input type="button" value=" Ok " id="url_acept"><input type="button" value=" Отмена " id="url_cancel">',
   			autoUnblock : false,
   			clickUnblock : false
@@ -95,7 +94,6 @@ $(function() {
 		$.ajax("/pictures/upload")
 		$.msg({ 
 			msgID : 1,
-  			bgPath : '/dev-assets/',
   			content : '<div id="image_paste_msgbox"></div>',
   			autoUnblock : false,
   			clickUnblock : false

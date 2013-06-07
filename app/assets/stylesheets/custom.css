@@ -574,7 +574,7 @@ p#dscr a:hover {
 
 #avatar_full_hd {
 	max-width: 980px;
-	max-height: 50%;
+	max-height: 600px;
 }
 
 #avatar_preview {
